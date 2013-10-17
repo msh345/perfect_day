@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-PerfectDay::Application.config.secret_key_base = 'c8b32432e471a57a304bb940acd17669897fa266069668a98ae73d997f34c39bb7cf97a81626c62561b181e2c758f819861fe39942affe3cb613b1a8af75b209'
+PerfectDay::Application.config.secret_key_base = 'AIzaSyD4oHdoO9rLn5rCAoB4nmkh0h8dEy9xlrU'
