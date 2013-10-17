@@ -32,8 +32,28 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -43,3 +63,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'geocoder'
