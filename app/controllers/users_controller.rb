@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      reset_session
-      session[:user_id] = @user.id
+      create_session
       redirect_to @user
     else
       @signup_errors = @user.errors.full_messages
