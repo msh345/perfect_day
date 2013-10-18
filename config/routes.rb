@@ -1,4 +1,5 @@
 PerfectDay::Application.routes.draw do
- resources :sessions
+ root to: "sessions#index"
+ resources :sessions, except: :index
  resources :users
 end
