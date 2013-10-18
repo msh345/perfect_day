@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
       render :index
     end
   end
+
+  def destroy
+    reset_session
+    redirect_to root_path
+  end
 end
 
 
