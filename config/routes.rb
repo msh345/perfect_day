@@ -6,4 +6,5 @@ PerfectDay::Application.routes.draw do
  get '/browse' => "itineraries#browse"
  get '/new' => "itineraries#new"
  get '/favorite' => "itineraries#favorite"
+ post '/create' => "itineraries#create"
 end

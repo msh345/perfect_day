@@ -6,22 +6,26 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    # params[:itineraries][:name] = value
-    # params[:spot] = {address: value, description: value}
-
-
-    user_itineraries = @user.itineraries << Itinerary.create(name: params[:itinerary_name])
-
-    user_itinerary = user_itineraries.last
-    user_itinerary.spots << Spot.create(address: params[:spot][:address])
-    user_itinerary.userspots << UserSpots.find((description: params[:spot][:address])
-
+    # user_itineraries = @user.itineraries << Itinerary.create(name: params[:itinerary_name])
+    # user_itinerary = user_itineraries.last
+    # user_itinerary.spots << Spot.create(address: params[:spot][:address])
+    # user_spot = ItinerarySpot.last
+    # user_spot.update_attributes(description: params[:spot][:description])
+    puts "********************"
+    puts "********************"
+    puts params.inspect
+    puts "********************"
+    puts "********************"
+    redirect_to new_path
   end
 
   def new
   end
 
   def favorite
+  end
+
+  def spot
   end
 
 end

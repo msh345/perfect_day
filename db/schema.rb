@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20131018204732) do
   create_table "itinerary_spots", force: true do |t|
     t.integer  "itinerary_id"
     t.integer  "spot_id"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
