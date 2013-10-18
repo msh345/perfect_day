@@ -7,7 +7,7 @@
   <%= f.submit "Login" %>
 <% end %>
 <p>create user button</p>
-<%= form_for :users do |f| %>
+<%= form_for :signup, url: users_path do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
   <%= f.label :email %>
