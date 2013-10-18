@@ -1,0 +1,9 @@
+<%= form_for :itineraries, url: create_path do |f| %>
+  <%= f.label :name, "name your itinerary" %>
+  <%= f.text_field :name %>
+  <%= render "itineraries/spot" %>
+  <button id="add_new_spot" type="button">Add New Spot</button>
+  <br><br><br><%= f.submit "Publish" %>
+<% end %>
+<br><br><br>
+Form to create spots
