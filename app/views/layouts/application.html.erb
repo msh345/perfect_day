@@ -6,9 +6,27 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+  <% if current_user %>
+  <!-- this will be on the options popout on top nav -->
+  <div class="header-nav">
+    <%= link_to "logout", session_path(current_user), method: :delete %>
+  </div>
+  <% end %>
 <body>
 
 <%= yield %>
 
 </body>
+
+<% if current_user %>
+  <div class='footer-nav'>
+    <%= link_to "home", user_path(current_user)%>
+    <%= link_to "browse", browse_path %>
+    <%= link_to "create", new_path %>
+    <%= link_to "favorites", favorite_path %>
+    <%= link_to "search" %>
+  </div>
+<% end %>
+
+
 </html>

@@ -1,0 +1,7 @@
+we will show all of this user's created itineraries below
+<% @itineraries.try(:each) do |itinerary| %>
+  <div class="itinerary">
+    <img class="map-of-itinerary" src="http://localhost:3000/<%= itinerary.map %>">
+    <p><%= itinerary.title %></p>
+  </div>
+<% end %>
