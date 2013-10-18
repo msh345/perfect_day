@@ -1,0 +1,21 @@
+<p>login button</p>
+<%= form_for :users, url: sessions_path  do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Login" %>
+<% end %>
+<p>create user button</p>
+<%= form_for :users do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Create User" %>
+<% end %>
+<p>Contine to site as guest</p>
