@@ -1,4 +1,7 @@
 <p>login button</p>
+
+<%= @login_error if @login_error %>
+
 <%= form_for :users, url: sessions_path  do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
@@ -7,6 +10,12 @@
   <%= f.submit "Login" %>
 <% end %>
 <p>create user button</p>
+
+<ul>
+<% @signup_errors.try(:each) do |signup_error| %>
+  <li><%= signup_error %></li>
+<% end %>
+</ul>
 <%= form_for :signup, url: users_path do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>

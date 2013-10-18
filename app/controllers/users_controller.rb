@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @signup_errors = @user.errors.full_messages
-      render sessions_path
+      render 'sessions/index'
     end
   end
 
