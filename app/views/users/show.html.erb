@@ -9,9 +9,9 @@ we will show all of this user's created itineraries below
 
 <div class='footer-nav'>
   <%= link_to "home", user_path(current_user)%>
-  <%= link_to "browse" %>
-  <%= link_to "create" %>
-  <%= link_to "favorites" %>
+  <%= link_to "browse", browse_path %>
+  <%= link_to "create", new_path %>
+  <%= link_to "favorites", favorite_path %>
   <%= link_to "search" %>
   <!-- this will be on the options popout on top nav -->
   <%= link_to "logout", session_path, method: :delete %>
