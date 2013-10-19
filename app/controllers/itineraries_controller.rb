@@ -6,6 +6,11 @@ class ItinerariesController < ApplicationController
   end
 
   def create
+    puts "*********************"
+    puts "*********************"
+    puts params.inspect
+    puts "*********************"
+    puts "*********************"
     user_itinerary = Itinerary.create(itinerary_params)
     user_itineraries = current_user.itineraries << user_itinerary
     params[:itineraries_name].each do |spot_params|
