@@ -47,7 +47,7 @@ function SubmitResponse() {
     }
     $.post('/create', output, function(response) {
       console.log(response);
-    })
+    },"json")
   });
 }
 
