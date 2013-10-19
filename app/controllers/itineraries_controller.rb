@@ -26,6 +26,10 @@ class ItinerariesController < ApplicationController
   def spot
   end
 
+  def show
+    @itinerary = Itinerary.find(params[:id])
+  end
+
   private
     def itinerary_params
       params.require(:itineraries).permit(:name)

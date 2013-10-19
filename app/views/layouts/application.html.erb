@@ -14,9 +14,9 @@
         <%= link_to "logout", session_path(current_user), method: :delete %>
       </div>
     <% end %>
-
+<br>
     <%= yield %>
-
+<br><br><br>
     <% if current_user %>
       <div class='footer-nav'>
         <%= link_to "home", user_path(current_user)%>
