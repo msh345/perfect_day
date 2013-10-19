@@ -6,17 +6,15 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    # user_itineraries = @user.itineraries << Itinerary.create(name: params[:itinerary_name])
-    # user_itinerary = user_itineraries.last
-    # user_itinerary.spots << Spot.create(address: params[:spot][:address])
-    # user_spot = ItinerarySpot.last
-    # user_spot.update_attributes(description: params[:spot][:description])
-    puts "********************"
-    puts "********************"
-    puts params.inspect
-    puts "********************"
-    puts "********************"
-    redirect_to new_path
+    user_itineraries = current_user.itineraries << Itinerary.create(itinerary_params)
+    user_itinerary = Itinerary.last
+    params[:itineraries_name].each do |spot_params|
+      user_itinerary.spots << Spot.find_or_create_by(address: spot_params[:address])
+      itinerary_spot = ItinerarySpot.last
+      itinerary_spot.update_attributes(description: spot_params[:description])
+    end
+
+    redirect_to user_path(current_user)
   end
 
   def new
@@ -27,5 +25,10 @@ class ItinerariesController < ApplicationController
 
   def spot
   end
+
+  private
+    def itinerary_params
+      params.require(:itineraries).permit(:name)
+    end
 
 end

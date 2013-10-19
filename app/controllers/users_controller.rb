@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @itineraries = current_user.itineraries
   end
 
   def create
