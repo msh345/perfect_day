@@ -6,11 +6,11 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    user_itineraries = current_user.itineraries << Itinerary.create(itinerary_params)
-    user_itinerary = Itinerary.last
+    user_itinerary = Itinerary.create(itinerary_params)
+    user_itineraries = current_user.itineraries << user_itinerary
     params[:itineraries_name].each do |spot_params|
-      user_itinerary.spots << Spot.find_or_create_by(address: spot_params[:address])
-      itinerary_spot = ItinerarySpot.last
+      itinerary_spot = Spot.find_or_create_by(address: spot_params[:address])
+      user_itinerary.spots << itinerary_spot
       itinerary_spot.update_attributes(description: spot_params[:description])
     end
 
