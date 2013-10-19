@@ -33,25 +33,25 @@ function SerializeData() {
     spot = new CreateSpot(place['name'], place['formatted_address'], place['formatted_phone_number'], place['geometry']['location']['lb'],
                   place['geometry']['location']['mb']   )
 
-    console.log(spot);
     spots.push(spot);
     counter++;
   });
 }
 
 function SubmitResponse() {
-  $('form').on('submit', function(event) {
+  $('#create_itinerary_form').on('submit', function(event) {
     event.preventDefault();
     for(var i=0; i<spots.length;i++){
       var name = "spot"+i
       output[name] = spots[i]
     }
-    
+    $.post('/create', output, function(response) {
+      console.log(response);
+    })
   });
 }
 
 function initialize() {
-
   SerializeData();
   SubmitResponse();
 }
