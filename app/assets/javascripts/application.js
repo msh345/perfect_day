@@ -20,7 +20,7 @@ $(function() {
     console.log(this);
     $(this).before("<fieldset>\
   <label>Spot Address<input type='text' name='itineraries_name[][address]'></label>\
-  <label>Spot number<input type='text' name='itineraries_name[][number]'></label>\
+  <label>Spot Description<input type='text' name='itineraries_name[][description]'></label>\
 </fieldset>")
   });
 });

@@ -1,0 +1,15 @@
+<h1><%= @itinerary.name %></h1>
+
+<h2>Spots</h2>
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Description</th>
+  </tr>
+  <% @itinerary.spots.each do |spot| %>
+    <tr>
+      <td><%= spot.address%></td>
+      <td><%= spot.itinerary_spots.find_by_itinerary_id(@itinerary.id).description %></td>
+    </tr>
+  <% end %>
+</table>
