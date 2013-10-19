@@ -5,7 +5,6 @@ function AddNewSpotForm() {
         <label>Spot Description<input class='description' type='text' name='itineraries_name[][description]'></label>\
         </fieldset>")
     SerializeData();
-    console.log(spots);
   });
 }
 
@@ -15,6 +14,10 @@ function CreateSpot(name, address, phone, latitude, longitude) {
   this.phone = phone;
   this.latitude = latitude;
   this.longitude = longitude;
+}
+
+CreateSpot.prototype.addDesc = function(description) {
+  this.description = description
 }
 var output = {}
 var inputs = []
@@ -41,10 +44,18 @@ function SerializeData() {
 function SubmitResponse() {
   $('#create_itinerary_form').on('submit', function(event) {
     event.preventDefault();
+
+    var data = $(this).serializeArray();
+    output["title"] = data[2].value
+
     for(var i=0; i<spots.length;i++){
-      var name = "spot"+i
-      output[name] = spots[i]
+      var name = "spot"+i;
+      var desc = 4 + (i*2);
+
+      spots[i].addDesc(data[desc].value)
+      output[name] = spots[i];
     }
+    console.log(output);
     $.post('/create', output, function(response) {
       console.log(response);
     },"json")

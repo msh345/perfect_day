@@ -37,7 +37,11 @@ ActiveRecord::Schema.define(version: 20131018204732) do
   add_index "itinerary_spots", ["spot_id"], name: "index_itinerary_spots_on_spot_id", using: :btree
 
   create_table "spots", force: true do |t|
+    t.string   "name"
     t.string   "address"
+    t.string   "phone"
+    t.string   "latitude"
+    t.string   "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
