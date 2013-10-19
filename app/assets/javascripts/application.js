@@ -16,11 +16,8 @@
 //= require_tree .
 
 $(function() {
-  $('#add_new_spot').on('click', function(e) {
-    console.log(this);
-    $(this).before("<fieldset>\
-  <label>Spot Address<input type='text' name='itineraries_name[][address]'></label>\
-  <label>Spot Description<input type='text' name='itineraries_name[][description]'></label>\
-</fieldset>")
-  });
+  AddNewSpotForm();
+  CreateSpot();
+
+  google.maps.event.addDomListener(window, 'load', initialize);
 });

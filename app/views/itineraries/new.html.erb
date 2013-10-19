@@ -1,4 +1,4 @@
-<%= form_for :itineraries, url: create_path do |f| %>
+<%= form_for :itineraries, url: create_path, html: {id: 'create_itinerary_form'} do |f| %>
   <%= f.label :name, "name your itinerary" %>
   <%= f.text_field :name %>
   <%= render "itineraries/spot" %>
