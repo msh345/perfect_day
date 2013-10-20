@@ -9,10 +9,19 @@
 </head>
 
   <body>
+    <!-- <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=218294835013440";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+     -->
     <% if current_user %>
     <!-- this will be on the options popout on top nav -->
       <div class="header-nav">
-        <%= link_to "logout", session_path(current_user), method: :delete %>
+        <%= link_to "Sign out", signout_path(current_user), method: :destroy %>
       </div>
     <% end %>
 <br>

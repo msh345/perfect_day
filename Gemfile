@@ -35,6 +35,12 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'better_errors'
+  
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

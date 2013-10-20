@@ -4,6 +4,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <%= current_user.name %>
     </tr>
 <% @itineraries.try(:each) do |itinerary| %>
     <tr>
