@@ -46,19 +46,20 @@ function SubmitResponse() {
     event.preventDefault();
 
     var data = $(this).serializeArray();
-    output["title"] = data[2].value
+    output["name"] = data[2].value
 
     for(var i=0; i<spots.length;i++){
-      var name = "spot"+i;
       var desc = 4 + (i*2);
 
       spots[i].addDesc(data[desc].value)
-      output[name] = spots[i];
     }
-    console.log(output);
+    output["spots"] = spots
+
     $.post('/create', output, function(response) {
-      console.log(response);
-    },"json")
+      window.location.replace('/')
+    // }).done(function(){
+
+    })
   });
 }
 
@@ -66,5 +67,3 @@ function initialize() {
   SerializeData();
   SubmitResponse();
 }
-
-
