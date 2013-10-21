@@ -19,10 +19,11 @@ function CreateSpot(name, address, phone, latitude, longitude) {
 CreateSpot.prototype.addDesc = function(description) {
   this.description = description
 }
-var output = {}
-var inputs = []
-var spots = []
-var counter = 0
+
+var output = {};
+var inputs = [];
+var spots = [];
+var counter = 0;
 
 function SerializeData() {
   var input = $('.address')[counter];
@@ -64,6 +65,7 @@ function SubmitResponse() {
 }
 
 function initialize() {
+  console.log("here in initialize")
   SerializeData();
   SubmitResponse();
 }

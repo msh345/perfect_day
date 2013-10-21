@@ -55,6 +55,7 @@ function latLong(coords) {
 
 function generateItinerary() {
   $('.map-canvas').each(function() {
+
     var lat_long_array = $(this).data('latlong');
 
     var itin = {waypoints: latLong(lat_long_array)}

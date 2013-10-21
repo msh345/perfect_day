@@ -12,26 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 // $(function() {
-$(document).on("page:load", function() {
-  kickOff();
-});
 
 $(document).on("ready", function() {
   kickOff();
 });
 
 function kickOff() {
-  AddNewSpotForm();
-  CreateSpot();
-  directionsService = new google.maps.DirectionsService();
-  maps = [];
-  // initialize();
+  console.log("here in kickoff");
 
-  generateItinerary();
+  if($(".itineraries").length > 0 ) {
+    console.log('Loading itineray maps...')
+    directionsService = new google.maps.DirectionsService();
+    maps = [];
+    generateItinerary();
+  }
+
+  if (!($('#create_itinerary_form').length === 0)) {
+    console.log("Loading itineray form stuff")
+    AddNewSpotForm();
+    CreateSpot();
+    initialize();
+  }
+
 }
 
   // var i1 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
