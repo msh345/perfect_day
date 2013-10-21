@@ -8,7 +8,7 @@
 <% @itineraries.try(:each) do |itinerary| %>
     <tr>
       <td><%= itinerary.id %></td>
-      <td><%= link_to itinerary.name, itinerary_path(itinerary) %></td>
+      <td><a href="/itineraries/<%= itinerary.id %>/spots/1"><%= itinerary.name %></td>
     </tr>
 <% end %>
   </table>

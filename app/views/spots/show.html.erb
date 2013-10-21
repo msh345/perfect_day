@@ -1,0 +1,21 @@
+<h5><%= @itinerary.name %></h5>
+<a href="/upvote/itin/<%= @itinerary.id %>">
+<button type="button">Upvote Itinerary</button></a>
+<%= @itinerary.vote_count %>
+
+<br>Spot <%= @spot.id %><br>
+<a href="/upvote/<%= @itin_spot.id %>/spot/<%= @spot.id %>">
+<button type="button">Upvote Spot</button></a>
+<%= @itin_spot.vote_count %>
+<br><br><br>
+<%= @spot.name %><br>
+<%= @spot.address %><br>
+<%= @spot.phone %><br>
+<%= @spot.longitude %><br>
+<%= @spot.latitude %><br>
+<% unless @itinerary.spots.first.id == @spot.id %>
+  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @spot.id - 1 %>">Previous</a>
+<% end %>
+<% unless @itinerary.spots.last.id == @spot.id %>
+  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @spot.id + 1 %>">Next</a>
+<% end %>

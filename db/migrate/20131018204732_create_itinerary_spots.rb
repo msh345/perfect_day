@@ -4,6 +4,7 @@ class CreateItinerarySpots < ActiveRecord::Migration
       t.references :itinerary, index: true
       t.references :spot, index: true
       t.text :description
+      t.integer :vote_count, default: 0
 
       t.timestamps
     end
