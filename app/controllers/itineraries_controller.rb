@@ -6,9 +6,8 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    # params["spots"].each {|key,value| puts value["address"]}
     user_itinerary = Itinerary.find_or_create_by(name: params[:name])
-    user_itineraries = current_user.itineraries << user_itinerary
+    current_user.itineraries << user_itinerary
     params[:spots].each do |key,value|
       spot = Spot.find_or_create_by(name: value[:name], address: value[:address],
                                     phone: value[:phone], latitude: value[:latitude],
@@ -34,8 +33,9 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
-  private
-    def itinerary_params
-      params.require(:itineraries).permit(:name)
-    end
+  def upvote
+    itin = Itinerary.find(params[:id])
+    itin.upvote!
+    redirect_to itinerary_path(itin)
+  end
 end
