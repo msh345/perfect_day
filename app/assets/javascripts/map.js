@@ -1,5 +1,3 @@
-var directionsService = new google.maps.DirectionsService();
-var maps = [];
 
 function generateMap(itinerary, element) {
   var map;
@@ -19,7 +17,7 @@ function generateMap(itinerary, element) {
 
 function calcRoute(waypoints, display) {
   var waypts = [];
-
+  console.log(waypoints);
   for (var i=1; i<waypoints.length-1; i++) {
     var testLatLng = {
       location: waypoints[i],
@@ -45,4 +43,28 @@ function calcRoute(waypoints, display) {
       var route = response.routes[0];
     }
   });
+}
+
+function latLong(coords) {
+  var waypoints = []
+  coords.filter(function(i){
+    waypoints.push(new google.maps.LatLng(i[0], i[1]))
+  })
+  return waypoints
+}
+
+function generateItinerary() {
+  $('.map-canvas').each(function() {
+    var lat_long_array = $(this).data('latlong');
+
+    var itin = {waypoints: latLong(lat_long_array)}
+    // var place_holder = latLong(lat_long_array);
+
+    // var waypoints = []
+
+    // // console.log(waypoints);
+    // var itin = new {waypoints: waypoints};
+
+    maps.push(generateMap(itin, $(this).get(0)));
+  })
 }

@@ -42,12 +42,13 @@ function generateMap(itinerary, element) {
 
   return map;
 }
-  
+
 function calcRoute(waypoints, display) {
   var waypts = [];
+  console.log(waypoints);
 
   for (var i=1; i<waypoints.length-1; i++) {
-    var testLatLng = { 
+    var testLatLng = {
       location: waypoints[i],
       stopover: true
     }
@@ -75,11 +76,11 @@ function calcRoute(waypoints, display) {
 
 $(document).ready(function() {
 
-  var i1 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
-                        new google.maps.LatLng(41.890759, -87.628229),
-                        new google.maps.LatLng(41.900759, -87.658229),
-                        new google.maps.LatLng(41.880759, -87.658229),
-                        new google.maps.LatLng(41.899911, -87.636953)]}
+  var i1 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657)]}
+                        // new google.maps.LatLng(41.890759, -87.628229),
+                        // new google.maps.LatLng(41.900759, -87.658229),
+                        // new google.maps.LatLng(41.880759, -87.658229),
+                        // new google.maps.LatLng(41.899911, -87.636953)]}
 
   var i2 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
                         new google.maps.LatLng(41.890759, -87.628229),
@@ -88,9 +89,9 @@ $(document).ready(function() {
   var itineraries = [i1, i2];
 
   for(var i=0; i < itineraries.length; i++) {
-    var el = $('<div class="map-canvas" data-latlong="[jake, nelsol]" style="width:300px;height:250px;margin:0 auto;display:block;"></div>');
+    var el = $('<div class="map-canvas" style="width:300px;height:250px;margin:0 auto;display:block;"></div>');
     $("body").append(el);
-
+    console.log(el)
     maps.push(generateMap(itineraries[i], el.get(0)));
   }
   console.log($('.map-canvas').attr('data-latlong'))
@@ -100,9 +101,5 @@ $(document).ready(function() {
   </head>
   <body>
 
-    <% @spots.each do |spot| %>
-      <div class="map-canvas" data-latlong="<%= spot.latlong %>" style="width:300px;height:250px;margin:0 auto;display:block;"></div>
-    <% end %>
-  
   </body>
 </html>

@@ -27,12 +27,12 @@ var counter = 0
 function SerializeData() {
   var input = $('.address')[counter];
   inputs.push(input);
-  
+
   var searchBox = new google.maps.places.Autocomplete(inputs[counter]);
 
   google.maps.event.addListener(searchBox, 'place_changed', function() {
     var place = searchBox.getPlace();
-    
+
     spot = new CreateSpot(place['name'], place['formatted_address'], place['formatted_phone_number'], place['geometry']['location']['lb'],
                   place['geometry']['location']['mb']   )
 
@@ -46,20 +46,20 @@ function SubmitResponse() {
     event.preventDefault();
 
     var data = $(this).serializeArray();
-    output["name"] = data[2].value
+    output["name"] = data[2].value;
 
     for(var i=0; i<spots.length;i++){
       var desc = 4 + (i*2);
 
-      spots[i].addDesc(data[desc].value)
+      spots[i].addDesc(data[desc].value);
     }
-    output["spots"] = spots
+    output["spots"] = spots;
 
     $.post('/create', output, function(response) {
-      window.location.replace('/')
-    // }).done(function(){
+      window.location.replace('/');
+    //.done(function(){
 
-    })
+    });
   });
 }
 
