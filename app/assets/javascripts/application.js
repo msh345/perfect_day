@@ -19,5 +19,26 @@ $(function() {
   AddNewSpotForm();
   CreateSpot();
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+
+  var i1 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
+                        new google.maps.LatLng(41.890759, -87.628229),
+                        new google.maps.LatLng(41.900759, -87.658229),
+                        new google.maps.LatLng(41.880759, -87.658229),
+                        new google.maps.LatLng(41.899911, -87.636953)]};
+
+  var i2 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
+                        new google.maps.LatLng(41.890759, -87.628229),
+                        new google.maps.LatLng(41.860759, -87.658229),
+                        new google.maps.LatLng(41.899911, -87.636953)]};
+  var itineraries = [i1, i2];
+
+  for(var i=0; i < itineraries.length; i++) {
+    var el = $('<div class="map-canvas" style="width:300px;height:250px;margin:0 auto;display:block;"></div>');
+    $("body").append(el);
+
+    maps.push(generateMap(itineraries[i], el.get(0)));
+  }
+  console.log($('.map-canvas').attr('data-latlong'));
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 });
