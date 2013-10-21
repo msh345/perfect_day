@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20131020171836) do
   create_table "itinerary_spots", force: true do |t|
     t.integer  "itinerary_id"
     t.integer  "spot_id"
-    t.text     "description",              null: false
+    t.text     "description"
     t.integer  "vote_count",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
