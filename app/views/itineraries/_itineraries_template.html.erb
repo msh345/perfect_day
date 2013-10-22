@@ -1,7 +1,10 @@
 <div class="itineraries">
 
   <% @itineraries.try(:each) do |itinerary| %>
-    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>"><%= itinerary.name %></a><br>
+    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>"><%= itinerary.name %></a> <% if current_user %>
+  <% link_to "favorite",   favorite_recipe_path(@recipe, type: "favorite"), method: :put %>
+  <% link_to "unfavorite", favorite_recipe_path(@recipe, type: "unfavorite"), method: :put %>
+<% end %><br>
     <% waypoints = [] %>
 
     <% itinerary.spots.each do |spot| %>

@@ -3,7 +3,7 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
-    @itineraries = current_user.itineraries
+    @itineraries = Itinerary.all
   end
 
   def create
@@ -25,6 +25,19 @@ class ItinerariesController < ApplicationController
   end
 
   def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @itineraries
+      redirect_to :back, notice: 'You favorited #{@itineraries.name}'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@itineraries)
+      redirect_to :back, notice: 'Unfavorited #{@itineraries.name}'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
   end
 
   def spot
