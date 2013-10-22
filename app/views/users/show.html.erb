@@ -1,16 +1,28 @@
 [comment: we will show all of this user's created itineraries below]
-<h1>Itineraries Created</h1>
+<div class="itineraries">
+  <h1>Itineraries Created</h1>
+  <p><%= current_user.name %></p>
   <table>
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <%= current_user.name %>
     </tr>
-<% @itineraries.try(:each) do |itinerary| %>
-    <tr>
-      <td><%= itinerary.id %></td>
-      <td><%= link_to itinerary.name, itinerary_path(itinerary) %></td>
-    </tr>
-<% end %>
+    <% @itineraries.try(:each) do |itinerary| %>
+        <tr>
+          <td><%= itinerary.id %></td>
+          <td><%= link_to itinerary.name, itinerary_path(itinerary) %></td>
+        </tr>
+    <% end %>
   </table>
 
+  <% @itineraries.try(:each) do |itinerary| %>
+    <a href="/itineraries/<%= itinerary.id %>/spots/1"><%= itinerary.name %></a><br>
+    <% waypoints = [] %>
+
+    <% itinerary.spots.each do |spot| %>
+      <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
+    <% end %>
+
+    <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+  <% end %>
+</div>
