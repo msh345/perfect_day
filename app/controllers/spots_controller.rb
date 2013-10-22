@@ -12,8 +12,8 @@ class SpotsController < ApplicationController
   end
 
   def upvote
-    itin_spot = Spot.find(params[:id])
-    itin_spot.upvote!
+    spot = Spot.find(params[:id])
+    spot.upvote!
     redirect_to(:back)
   end
 
