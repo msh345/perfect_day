@@ -3,10 +3,10 @@
 <button type="button">Upvote Itinerary</button></a>
 <%= @itinerary.vote_count %>
 
-<br>Spot <%= @spot.id %><br>
-<a href="/upvote/<%= @itin_spot.id %>/spot/<%= @spot.id %>">
+<br>Spot <%= params[:id] %><br>
+<a href="/upvote/spot/<%= @spot.id %>">
 <button type="button">Upvote Spot</button></a>
-<%= @itin_spot.vote_count %>
+<%= @spot.vote_count %>
 <br><br><br>
 <%= @spot.name %><br>
 <%= @spot.address %><br>
