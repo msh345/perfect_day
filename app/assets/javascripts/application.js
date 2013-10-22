@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
 // $(function() {
@@ -61,3 +62,5 @@ function kickOff() {
 
   //   google.maps.event.addDomListener(window, 'load', initialize);
 // });
+
+$(function(){ $(document).foundation(); });
