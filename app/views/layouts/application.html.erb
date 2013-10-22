@@ -22,28 +22,11 @@
   </head>
 
   <body>
-    <% if current_user %>
-    <!-- this will be on the options popout on top nav -->
-      <div class="header-nav">
-          <%= image_tag current_user.profile_url %>
-
-
-
-        <%= link_to "Sign out", signout_path(current_user), method: :destroy %>
-      </div>
-    <% end %>
-
+    <%= render "layouts/header" %>
+  
     <%= yield %>
 
-    <% if current_user %>
-      <div class='footer-nav'>
-        <%= link_to "home", user_path(current_user)%>
-        <%= link_to "browse", browse_path %>
-        <%= link_to "new", new_path %>
-        <%= link_to "favorites", favorite_path %>
-        <%= link_to "search" %>
-      </div>
-    <% end %>
+    <%= render "layouts/footer_nav" %>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtt4-lM1MBQ1Utw1m7aXtyLh2DZZLbRrM&sensor=false&libraries=places"></script>
 
