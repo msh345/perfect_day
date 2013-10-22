@@ -15,52 +15,34 @@
 //= require foundation
 //= require_tree .
 
-// $(function() {
+var your_location;
 
 $(document).on("ready", function() {
   kickOff();
+  getLocation();
 });
 
 function kickOff() {
-  console.log("here in kickoff");
 
   if($(".itineraries").length > 0 ) {
-    console.log('Loading itineray maps...')
     directionsService = new google.maps.DirectionsService();
     maps = [];
     generateItinerary();
   }
 
-  if (!($('#create_itinerary_form').length === 0)) {
-    console.log("Loading itineray form stuff")
+  if ($('#create_itinerary_form').length > 0) {
     AddNewSpotForm();
     CreateSpot();
     initialize();
   }
-
 }
 
-  // var i1 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
-  //                       new google.maps.LatLng(41.890759, -87.628229),
-  //                       new google.maps.LatLng(41.900759, -87.658229),
-  //                       new google.maps.LatLng(41.880759, -87.658229),
-  //                       new google.maps.LatLng(41.899911, -87.636953)]};
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition); 
+  }
+}
 
-  // var i2 = {waypoints: [new google.maps.LatLng(41.889911, -87.637657),
-  //                       new google.maps.LatLng(41.890759, -87.628229),
-  //                       new google.maps.LatLng(41.860759, -87.658229),
-  //                       new google.maps.LatLng(41.899911, -87.636953)]};
-  // var itineraries = [i1, i2];
-
-  // for(var i=0; i < itineraries.length; i++) {
-  //   var el = $('<div class="map-canvas" style="width:300px;height:250px;margin:0 auto;display:block;"></div>');
-  //   $("body").append(el);
-
-  //   maps.push(generateMap(itineraries[i], el.get(0)));
-  // }
-  // console.log($('.map-canvas').attr('data-latlong'));
-
-  //   google.maps.event.addDomListener(window, 'load', initialize);
-// });
-
-$(function(){ $(document).foundation(); });
+function showPosition(position) {
+  your_location = [position.coords.latitude, position.coords.longitude];
+}
