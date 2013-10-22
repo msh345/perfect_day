@@ -1,5 +1,9 @@
 <div class="itineraries">
-
+<ul>
+  <li><%=current_user.email%>
+  <li><%=current_user.location%>
+  <li><%=current_user.locale%>
+</ul>
   <% @itineraries.try(:each) do |itinerary| %>
     <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>"><%= itinerary.name %></a><br>
     <% waypoints = [] %>

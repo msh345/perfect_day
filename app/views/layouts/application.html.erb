@@ -25,7 +25,11 @@
     <% if current_user %>
     <!-- this will be on the options popout on top nav -->
       <div class="header-nav">
-        <%= link_to "logout", session_path(current_user), method: :delete %>
+          <%= image_tag current_user.profile_url %>
+
+
+
+        <%= link_to "Sign out", signout_path(current_user), method: :destroy %>
       </div>
     <% end %>
 
@@ -40,9 +44,9 @@
         <%= link_to "search" %>
       </div>
     <% end %>
-    
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtt4-lM1MBQ1Utw1m7aXtyLh2DZZLbRrM&sensor=false&libraries=places"></script>
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
