@@ -3,7 +3,8 @@
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
 
@@ -22,7 +23,7 @@
 
   <body>
     <% if current_user %>
-      <!-- this will be on the options popout on top nav -->
+    <!-- this will be on the options popout on top nav -->
       <div class="header-nav">
         <%= link_to "logout", session_path(current_user), method: :delete %>
       </div>
@@ -41,7 +42,7 @@
     <% end %>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtt4-lM1MBQ1Utw1m7aXtyLh2DZZLbRrM&sensor=false&libraries=places"></script>
-
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

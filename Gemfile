@@ -36,7 +36,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Zurb Foundation
-gem  'zurb-foundation'
+gem "zurb-foundation", "~> 4.3.2"
 
 # Use unicorn as the app server
 # gem 'unicorn'
