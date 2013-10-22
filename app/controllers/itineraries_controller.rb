@@ -29,6 +29,10 @@ class ItinerariesController < ApplicationController
   def spot
   end
 
+  def search
+
+  end
+
   def show
     @itinerary = Itinerary.find(params[:id])
   end
