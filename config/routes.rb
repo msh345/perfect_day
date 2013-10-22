@@ -5,14 +5,13 @@ PerfectDay::Application.routes.draw do
 
  root to: "sessions#index"
  resources :users
-
+ resources :favorites
  get '/search' => "itineraries#search"
  get '/browse' => "itineraries#browse"
  get '/new' => "itineraries#new"
- get '/favorite' => "itineraries#favorite"
  post '/create' => "itineraries#create"
  resources :itineraries, except: [:browse,:new,:favorite,:create] do
- resources :spots
+  resources :spots
  end
 
  get '/upvote/itin/:id' => "itineraries#upvote"

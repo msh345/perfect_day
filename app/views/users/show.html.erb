@@ -3,4 +3,4 @@
   <li><%=current_user.location%>
   <li><%=current_user.locale%>
 </ul>
-  <%= render "itineraries/itineraries_template" %>
+  <%= render "itineraries/itineraries", {itineraries: @itineraries} %>

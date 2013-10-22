@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :itineraries
-  has_many :favorite_itineraries
-  has_many :favorites, through: :favorite_itineraries
+  has_many :favorites
+  has_many :favorite_itineraries, through: :favorites, source: :itinerary
 
 
   def self.from_omniauth(auth)

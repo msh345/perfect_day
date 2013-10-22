@@ -3,8 +3,8 @@ class Itinerary < ActiveRecord::Base
   has_many :itinerary_spots
   has_many :spots, through: :itinerary_spots
 
-  has_many :favorite_itineraries
-  has_many :favorited_by, through: :favorite_itineraries, source: :user
+  has_many :favorites
+  has_many :favorited_by, through: :favorites, source: :user
 
   def upvote!
     self.vote_count += 1

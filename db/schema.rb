@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20131022201559) do
     t.datetime "updated_at"
   end
 
-  create_table "favorite_itineraries", force: true do |t|
+  create_table "favorites", force: true do |t|
     t.integer  "user_id"
     t.integer  "itinerary_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "favorite_itineraries", ["itinerary_id"], name: "index_favorite_itineraries_on_itinerary_id", using: :btree
-  add_index "favorite_itineraries", ["user_id"], name: "index_favorite_itineraries_on_user_id", using: :btree
+  add_index "favorites", ["itinerary_id"], name: "index_favorites_on_itinerary_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "itineraries", force: true do |t|
     t.string   "name",                   null: false
