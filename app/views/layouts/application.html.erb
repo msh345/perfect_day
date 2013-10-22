@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtt4-lM1MBQ1Utw1m7aXtyLh2DZZLbRrM&sensor=false&libraries=places"></script>
+
 </head>
 
   <body>
@@ -22,11 +22,11 @@
       <div class='footer-nav'>
         <%= link_to "home", user_path(current_user)%>
         <%= link_to "browse", browse_path %>
-        <%= link_to "create", new_path %>
+        <%= link_to "new", new_path %>
         <%= link_to "favorites", favorite_path %>
         <%= link_to "search" %>
       </div>
     <% end %>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtt4-lM1MBQ1Utw1m7aXtyLh2DZZLbRrM&sensor=false&libraries=places"></script>
   </body>
 </html>
