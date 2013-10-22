@@ -3,6 +3,7 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
+    @itineraries = current_user.itineraries
   end
 
   def create
