@@ -3,7 +3,7 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
-    @itineraries = current_user.itineraries
+    @itineraries = Itinerary.all
   end
 
   def create
@@ -22,9 +22,6 @@ class ItinerariesController < ApplicationController
   end
 
   def new
-  end
-
-  def favorite
   end
 
   def spot
