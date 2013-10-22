@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20131020171836) do
     t.integer  "itinerary_id"
     t.integer  "spot_id"
     t.text     "description"
-    t.integer  "vote_count",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(version: 20131020171836) do
     t.string   "phone"
     t.string   "latitude"
     t.string   "longitude"
+    t.integer  "vote_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

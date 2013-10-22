@@ -6,6 +6,7 @@ class CreateSpots < ActiveRecord::Migration
       t.string :phone
       t.string :latitude
       t.string :longitude
+      t.integer :vote_count, default: 0
       t.timestamps
     end
   end

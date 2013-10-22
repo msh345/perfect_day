@@ -13,5 +13,5 @@ PerfectDay::Application.routes.draw do
  end
 
  get '/upvote/itin/:id' => "itineraries#upvote"
- get '/upvote/:itin_spot_id/spot/:id' => "spots#upvote"
+ get '/upvote/spot/:id' => "spots#upvote"
 end
