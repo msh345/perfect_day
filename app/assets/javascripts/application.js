@@ -15,7 +15,7 @@
 //= require foundation
 //= require_tree .
 
-// $(function() {
+var your_location;
 
 $(document).on("ready", function() {
   kickOff();
@@ -23,35 +23,26 @@ $(document).on("ready", function() {
 });
 
 function kickOff() {
-  console.log("here in kickoff");
 
   if($(".itineraries").length > 0 ) {
-    console.log('Loading itineray maps...')
     directionsService = new google.maps.DirectionsService();
     maps = [];
     generateItinerary();
   }
 
-  if (!($('#create_itinerary_form').length === 0)) {
-    console.log("Loading itineray form stuff")
+  if ($('#create_itinerary_form').length > 0) {
     AddNewSpotForm();
     CreateSpot();
     initialize();
   }
-
 }
 
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-
-$(function(){ $(document).foundation(); });
-
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition); 
   }
-function showPosition(position)
-  {
-    console.log(position)
-  }
+}
+
+function showPosition(position) {
+  your_location = [position.coords.latitude, position.coords.longitude];
+}
