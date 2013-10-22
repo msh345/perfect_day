@@ -38,6 +38,14 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Zurb Foundation
 gem "zurb-foundation", "~> 4.3.2"
 
+gem 'better_errors'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook', '1.4.0'
+
+gem 'binding_of_caller'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
