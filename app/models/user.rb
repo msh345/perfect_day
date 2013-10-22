@@ -4,17 +4,13 @@ class User < ActiveRecord::Base
       user.provider         = auth.provider
       user.uid              = auth.uid
       user.name             = auth.info.name
-      # user.??               = auth.info.image
+      user.email            = auth.info.email
+      user.locale           = auth.extra.raw_info.locale
+      user.location         = auth.info.location
+      user.profile_url      = auth.info.image
       user.oauth_token      = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
-
-    # r = open("http://graph.facebook.com/#{@user.facebook_id}/picture")
-    #   image_data = r.read
-    #   file_size = r.length
-    #   mime_type = "image/jpeg"
-
-
   end
 end
