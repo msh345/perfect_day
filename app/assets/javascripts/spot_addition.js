@@ -58,14 +58,12 @@ function SubmitResponse() {
 
     $.post('/create', output, function(response) {
       window.location.replace('/');
-    //.done(function(){
-
     });
+
   });
 }
 
 function initialize() {
-  console.log("here in initialize")
   SerializeData();
   SubmitResponse();
 }
