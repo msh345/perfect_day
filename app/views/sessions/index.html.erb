@@ -1,10 +1,10 @@
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <div class="row">
-      <div class="large-12">
-        <%= link_to "Sign in with Facebook", "/auth/facebook", class: "fb_sign_in" %>
-      </div>
+<% if current_user %>
+  Welcome <strong><%= current_user.name %></strong>!
+  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+<% else %>
+  <div class="row" style="padding-top: 50px;">
+    <div class="large-12 welcome">
+      <%= link_to "Sign in with Facebook", "/auth/facebook", class: "fb_sign_in" %>
     </div>
-  <% end %>
+  </div>
+<% end %>
