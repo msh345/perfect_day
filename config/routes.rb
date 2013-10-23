@@ -14,6 +14,7 @@ PerfectDay::Application.routes.draw do
  resources :spots
  end
 
+ post '/find_location'  => "sessions#geolocate"
  get '/upvote/itin/:id' => "itineraries#upvote"
  get '/upvote/spot/:id' => "spots#upvote"
 end
