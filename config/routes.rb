@@ -6,6 +6,7 @@ PerfectDay::Application.routes.draw do
  root to: "sessions#index"
  resources :users
 
+ get '/search' => "itineraries#search"
  get '/browse' => "itineraries#browse"
  get '/new' => "itineraries#new"
  get '/favorite' => "itineraries#favorite"
