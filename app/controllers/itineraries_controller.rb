@@ -4,11 +4,14 @@ class ItinerariesController < ApplicationController
 
   def browse
     @itineraries = Itinerary.all
-    @distances = []
-    @itineraries.sort_by! do |itin|
-      @distances << calculate_distance(session[:coords], itin.spots[0].coords)
+    @distances = {}
+    @itineraries.each do |itin|
+      distance = Haversine.distance(session[:coords][0], session[:coords][1],
+                    itin.spots[0].coords[0], itin.spots[0].coords[1]).to_miles
+      @distances[distance] = itin
     end
-    @distances.sort!
+    @distances = @distances.sort_by {|k,v| k}
+    @distances = Hash[*@distances.flatten]
   end
 
   def create
