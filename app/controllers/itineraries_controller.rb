@@ -9,7 +9,6 @@ class ItinerariesController < ApplicationController
       @distances << calculate_distance(session[:coords], itin.spots[0].coords)
     end
     @distances.sort!
-    @itineraries
   end
 
   def create

@@ -19,6 +19,7 @@ var your_location;
 
 $(document).on("ready", function() {
   kickOff();
+  getLocation();
 });
 
 function kickOff() {
@@ -34,10 +35,6 @@ function kickOff() {
     CreateSpot();
     initialize();
   }
-
-  if($('#home').length > 0) {
-    getLocation();
-  }
 }
 
 function getLocation() {
@@ -48,7 +45,6 @@ function getLocation() {
 
 function showPosition(position) {
   your_location = [parseFloat(position.coords.latitude), parseFloat(position.coords.longitude)];
-  console.log(your_location);
   var data = {position: your_location}
   $.post('/find_location', data)
 }

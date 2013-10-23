@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def calculate_distance(your_latlong, destination_latlong) # as the crow flies
+  def calculate_distance(your_latlong, destination_latlong) # as the crow flies
     radius = 6371
     d_lat  = to_radian(destination_latlong[0] - your_latlong[0])
     d_lon  = to_radian(destination_latlong[1] - your_latlong[1])
