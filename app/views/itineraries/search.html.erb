@@ -12,14 +12,12 @@
   <% if @spot %>
     <% @spot.spots.each do |s| %>
       <p><%= s.name %></p>
+      <p><%= s.address %></p>
+      <p><%= s.phone %></p>
 
 
-<div class="spots">
-
-    <% waypoints = [] %>
-      <% waypoints << [s.latitude.to_f, s.longitude.to_f] %>
-
-    <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+<div class="spots search-results">
+    <div class="map-canvas" data-lat='<%=s.latitude.to_f%>' data-name='<%=@spot.name%>' data-long='<%=s.longitude.to_f%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
 
 </div>
 
