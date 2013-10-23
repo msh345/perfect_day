@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require typeahead.min
 //= require_tree .
 
 var your_location;
@@ -39,7 +40,7 @@ function kickOff() {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition); 
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 }
 

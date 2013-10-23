@@ -3,6 +3,7 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
+    @itineraries = Itinerary.all
   end
 
   def create
@@ -15,6 +16,10 @@ class ItinerariesController < ApplicationController
       user_itinerary.spots << spot
       itinerary_spot = spot.itinerary_spots.find_by_itinerary_id(user_itinerary.id)
       itinerary_spot.update_attributes(description: value[:description])
+
+      value[:types].each do |type|
+        spot.spot_types << SpotType.find_or_create_by(name: type)
+      end
     end
 
     redirect_to user_path(current_user)
@@ -23,10 +28,11 @@ class ItinerariesController < ApplicationController
   def new
   end
 
-  def favorite
+  def spot
   end
 
-  def spot
+  def search
+
   end
 
   def show
