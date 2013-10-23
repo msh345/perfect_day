@@ -19,4 +19,8 @@ PerfectDay::Application.routes.draw do
  post '/find_location'  => "sessions#geolocate"
  get '/upvote/itin/:id' => "itineraries#upvote"
  get '/upvote/spot/:id' => "spots#upvote"
+ get '/data/spot_types.json' => 'spots#spot_types'
+
 end
+
+

@@ -1,1 +1,28 @@
-  <%= render "itineraries/itineraries", {itineraries: @itineraries} %>
+<span class="twitter-typeahead" style="position: relative; display: inline-block;">
+  <!-- Make this form a form helper -->
+  <form id="search" action="/search" method="GET">
+    <input id="spot_type_search_input" class="typeahead tt-query" type="text" placeholder="Search Categories" autocomplete="off" spellcheck="false" dir="auto" name="name">
+    <span class="tt-dropdown-menu"></span>
+    <button id=  type="submit">Search</button>
+  </form>
+  <!-- end comment -->
+</span>
+
+<div id="results">
+  <% if @spot %>
+    <% @spot.spots.each do |s| %>
+      <p><%= s.name %></p>
+
+
+<div class="spots">
+
+    <% waypoints = [] %>
+      <% waypoints << [s.latitude.to_f, s.longitude.to_f] %>
+
+    <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+
+</div>
+
+    <% end %>
+  <% end %>
+</div>

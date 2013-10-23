@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require typeahead.min
 //= require_tree .
 
 var your_location;
@@ -23,6 +24,12 @@ $(document).on("ready", function() {
 });
 
 function kickOff() {
+
+  if($(".spots").length > 0 ) {
+    directionsService = new google.maps.DirectionsService();
+    maps = [];
+    generateItinerary();
+  }
 
   if($(".itineraries").length > 0 ) {
     directionsService = new google.maps.DirectionsService();
@@ -39,7 +46,7 @@ function kickOff() {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition); 
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 }
 
