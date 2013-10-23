@@ -54,3 +54,6 @@ gem 'binding_of_caller'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'thin'
+gem 'quiet_assets'

@@ -30,7 +30,7 @@ function kickOff() {
     generateItinerary();
   }
 
-  if ($('#create_itinerary_form').length > 0) {
+  if($('#create_itinerary_form').length > 0) {
     AddNewSpotForm();
     CreateSpot();
     initialize();
@@ -44,5 +44,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  your_location = [position.coords.latitude, position.coords.longitude];
+  your_location = [parseFloat(position.coords.latitude), parseFloat(position.coords.longitude)];
+  var data = {position: your_location}
+  $.post('/find_location', data)
 }

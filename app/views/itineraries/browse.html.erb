@@ -1,1 +1,15 @@
-  <%= render "itineraries", {itineraries: @itineraries} %>
+<div class="itineraries">
+
+  <% @itineraries.try(:each_with_index) do |itinerary, index| %>
+    <a href="/itineraries/<%= itinerary.id %>/spots/1"><%= itinerary.name %></a><br>
+    Starting point is <%= @distances[index].round(2) %> miles away
+    <% waypoints = [] %>
+
+    <% itinerary.spots.each do |spot| %>
+      <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
+    <% end %>
+
+    <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+  <% end %>
+
+</div>
