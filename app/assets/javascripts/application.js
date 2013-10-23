@@ -21,6 +21,7 @@ var your_location;
 $(document).on("ready", function() {
   kickOff();
   getLocation();
+  typeahead();
 });
 
 function kickOff() {
