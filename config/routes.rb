@@ -16,6 +16,9 @@ PerfectDay::Application.routes.draw do
   resources :spots
  end
 
- get '/upvote/itin/:id' => "itineraries#upvote"
- get '/upvote/spot/:id' => "spots#upvote"
+ get '/upvote/itin/:id'      => "itineraries#upvote"
+ get '/upvote/spot/:id'      => "spots#upvote"
+ get '/data/spot_types.json' => 'spots#spot_types'
 end
+
+
