@@ -45,6 +45,7 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
 gem 'binding_of_caller'
+gem 'pry'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -54,3 +55,6 @@ gem 'binding_of_caller'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'thin'
+gem 'quiet_assets'

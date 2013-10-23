@@ -4,8 +4,8 @@
     <%= link_to "home", user_path(current_user)%>
     <%= link_to "browse", browse_path %>
     <%= link_to "new", new_path %>
-    <%= link_to "favorites", favorite_path %>
-    <%= link_to "search" %>
+    <%= link_to "favorites", favorites_path %>
+    <%= link_to "search", search_path %>
   </div>
   
   <% elsif current_page?('/') %>

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require typeahead.min
 //= require_tree .
 
 var your_location;
@@ -20,9 +21,16 @@ var your_location;
 $(document).on("ready", function() {
   kickOff();
   getLocation();
+  typeahead();
 });
 
 function kickOff() {
+
+  if($(".spots").length > 0 ) {
+    directionsService = new google.maps.DirectionsService();
+    maps = [];
+    generateItinerary();
+  }
 
   if($(".itineraries").length > 0 ) {
     directionsService = new google.maps.DirectionsService();
@@ -30,7 +38,7 @@ function kickOff() {
     generateItinerary();
   }
 
-  if ($('#create_itinerary_form').length > 0) {
+  if($('#create_itinerary_form').length > 0) {
     AddNewSpotForm();
     CreateSpot();
     initialize();
@@ -39,10 +47,12 @@ function kickOff() {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition); 
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 }
 
 function showPosition(position) {
-  your_location = [position.coords.latitude, position.coords.longitude];
+  your_location = [parseFloat(position.coords.latitude), parseFloat(position.coords.longitude)];
+  var data = {position: your_location}
+  $.post('/find_location', data)
 }

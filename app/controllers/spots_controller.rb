@@ -16,5 +16,9 @@ class SpotsController < ApplicationController
     spot.upvote!
     redirect_to(:back)
   end
+  
+  def spot_types
+    render json: SpotType.pluck(:name)
+  end
 
 end

@@ -8,12 +8,13 @@ function AddNewSpotForm() {
   });
 }
 
-function CreateSpot(name, address, phone, latitude, longitude) {
+function CreateSpot(name, address, phone, latitude, longitude, types) {
   this.name = name;
   this.address = address;
   this.phone = phone;
   this.latitude = latitude;
   this.longitude = longitude;
+  this.types = types;
 }
 
 CreateSpot.prototype.addDesc = function(description) {
@@ -35,7 +36,7 @@ function SerializeData() {
     var place = searchBox.getPlace();
 
     spot = new CreateSpot(place['name'], place['formatted_address'], place['formatted_phone_number'], place['geometry']['location']['lb'],
-                  place['geometry']['location']['mb']   )
+                  place['geometry']['location']['mb'], place['types'])
 
     spots.push(spot);
     counter++;

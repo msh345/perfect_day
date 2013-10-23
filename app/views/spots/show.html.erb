@@ -1,4 +1,11 @@
 <h5><%= @itinerary.name %></h5>
+<%  if current_user %>
+  <% if current_user.has_favorited?(@itinerary) %>
+    <%= link_to "unfavorite", destroy_favorite_path(itinerary_id: @itinerary.id), method: :delete %>
+    <% else %>
+  <%= link_to "favorite", favorites_path(itinerary_id: @itinerary.id), method: :post %>
+  <% end %>
+<% end %>
 <a href="/upvote/itin/<%= @itinerary.id %>">
 <button type="button">Upvote Itinerary</button></a>
 <%= @itinerary.vote_count %>

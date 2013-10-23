@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :itineraries
+  has_many :favorites
+  has_many :favorite_itineraries, through: :favorites, source: :itinerary
+
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -15,4 +18,9 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def has_favorited?(itinerary)
+    !!Favorite.where(user_id: self.id, itinerary_id: itinerary.id).first
+  end
+
 end
