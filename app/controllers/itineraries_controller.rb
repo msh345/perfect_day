@@ -32,7 +32,7 @@ class ItinerariesController < ApplicationController
   end
 
   def search
-
+    @spot = SpotType.where(name: params[:name]).includes(:spots).pop
   end
 
   def show

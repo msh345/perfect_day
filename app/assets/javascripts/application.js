@@ -25,6 +25,12 @@ $(document).on("ready", function() {
 
 function kickOff() {
 
+  if($(".spots").length > 0 ) {
+    directionsService = new google.maps.DirectionsService();
+    maps = [];
+    generateItinerary();
+  }
+
   if($(".itineraries").length > 0 ) {
     directionsService = new google.maps.DirectionsService();
     maps = [];
