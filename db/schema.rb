@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022201559) do
+ActiveRecord::Schema.define(version: 20131023014224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,20 @@ ActiveRecord::Schema.define(version: 20131022201559) do
   add_index "itinerary_spots", ["itinerary_id"], name: "index_itinerary_spots_on_itinerary_id", using: :btree
   add_index "itinerary_spots", ["spot_id"], name: "index_itinerary_spots_on_spot_id", using: :btree
 
+  create_table "spot_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spot_types_spots", force: true do |t|
+    t.integer "spot_id"
+    t.integer "spot_type_id"
+  end
+
+  add_index "spot_types_spots", ["spot_id"], name: "index_spot_types_spots_on_spot_id", using: :btree
+  add_index "spot_types_spots", ["spot_type_id"], name: "index_spot_types_spots_on_spot_type_id", using: :btree
+
   create_table "spots", force: true do |t|
     t.string   "name"
     t.string   "address"
@@ -61,6 +75,12 @@ ActiveRecord::Schema.define(version: 20131022201559) do
     t.string   "latitude"
     t.string   "longitude"
     t.integer  "vote_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
