@@ -6,4 +6,8 @@ class Spot < ActiveRecord::Base
     self.vote_count += 1
     self.save
   end
+
+  def coords
+    [self.latitude.to_f, self.longitude.to_f]
+  end
 end

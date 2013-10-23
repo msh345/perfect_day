@@ -3,6 +3,13 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
+    @itineraries = Itinerary.all
+    @distances = []
+    @itineraries.sort_by! do |itin|
+      @distances << calculate_distance(session[:coords], itin.spots[0].coords)
+    end
+    @distances.sort!
+    @itineraries
   end
 
   def create
