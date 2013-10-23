@@ -9,6 +9,7 @@ PerfectDay::Application.routes.draw do
  resources :favorites, except: :destroy
  delete '/destroy_favorite' => "favorites#destroy", as: 'destroy_favorite'
  get '/search' => "itineraries#search"
+ post '/search' => "spot_types#show"
  get '/browse' => "itineraries#browse"
  get '/new' => "itineraries#new"
  post '/create' => "itineraries#create"
