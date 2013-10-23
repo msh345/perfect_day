@@ -1,8 +1,8 @@
 <div class="itineraries">
 
-  <% @itineraries.try(:each_with_index) do |itinerary, index| %>
-    <a href="/itineraries/<%= itinerary.id %>/spots/1"><%= itinerary.name %></a><br>
-    Starting point is <%= @distances[index].round(2) %> miles away
+  <% itineraries.each do |itinerary| %>
+    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>"><%= itinerary.name %></a>
+
     <% waypoints = [] %>
 
     <% itinerary.spots.each do |spot| %>

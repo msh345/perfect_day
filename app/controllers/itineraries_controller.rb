@@ -30,10 +30,11 @@ class ItinerariesController < ApplicationController
   def new
   end
 
-  def favorite
+  def spot
   end
 
-  def spot
+  def search
+
   end
 
   def show
