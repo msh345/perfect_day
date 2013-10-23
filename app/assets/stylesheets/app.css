@@ -1,0 +1,14 @@
+.welcome {
+  background: #aaa;
+}
+
+.fb_sign_in {
+  margin: 0 15px 0 15px;
+  padding: 20px 20px;
+  color: #fff;
+  font: bold 20px arial;
+  background: #1C72FC;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+}

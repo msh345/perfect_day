@@ -1,17 +1,17 @@
 <% if current_user %>
   
   <div class='row'>
-    <div class="row">
-      <%= link_to "home", user_path(current_user)%>
-      <%= link_to "browse", browse_path %>
-      <%= link_to "new", new_path %>
-      <%= link_to "favorites", favorite_path %>
-      <%= link_to "search" %>
-    </div>
+    <%= link_to "home", user_path(current_user)%>
+    <%= link_to "browse", browse_path %>
+    <%= link_to "new", new_path %>
+    <%= link_to "favorites", favorite_path %>
+    <%= link_to "search" %>
   </div>
+  
+  <% elsif current_page?('/') %>
   
   <% else %>
 
-  Not logged in user nav.
+    This is navi-footer.
 
 <% end %>
