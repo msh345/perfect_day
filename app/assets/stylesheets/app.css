@@ -1,5 +1,6 @@
 .welcome {
   background: #aaa;
+  height: 300px;
 }
 
 .fb_sign_in {
@@ -11,4 +12,11 @@
   display: block;
   text-align: center;
   border-radius: 5px;
+}
+
+.bottom{
+	position: fixed;
+	bottom: 0;
+	height: 40px;
+	background: #000;
 }

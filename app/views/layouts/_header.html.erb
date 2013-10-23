@@ -1,9 +1,11 @@
 <% if current_user %>
 
   <!-- this will be on the options popout on top nav -->
-  <div class="row">
+  <div class="row" style="background: #eee;">
+    <div class="small-12">
       <%= image_tag current_user.profile_url %>
       <%= link_to "Sign out", signout_path(current_user), method: :destroy %>
+    </div>
   </div>
 
   <% else %>
