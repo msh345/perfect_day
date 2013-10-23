@@ -1,1 +1,20 @@
-<%= render "itineraries/itineraries", {itineraries: @itineraries} %>
+<div class="row map_holder">
+	<div class="itineraries">
+	  <% @itineraries.try(:each) do |itinerary| %>
+
+	    <% waypoints = [] %>
+
+	    <% itinerary.spots.each do |spot| %>
+	      <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
+	    <% end %>
+
+	    	<div class="large-12 perfect_day_list">
+	    		<a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>" class="day_title"><%= itinerary.name %></a>
+
+	    		<div class="map_background">
+	    			<div class="map-canvas" data-latlong='<%= waypoints %>' style="width:100%;height:250px;display:block;"></div>
+	    		</div>
+	    	</div>
+	  <% end %>
+	</div>
+</div>

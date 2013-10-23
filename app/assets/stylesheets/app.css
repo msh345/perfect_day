@@ -1,0 +1,126 @@
+body, html { height: 100%; }
+
+@font-face {
+    font-family: 'opensanslight';
+    src: url('opensans-light-webfont.eot');
+    src: url('opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-light-webfont.woff') format('woff'),
+         url('opensans-light-webfont.ttf') format('truetype'),
+         url('opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'opensansreg';
+    src: url('opensans-regular-webfont.eot');
+    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype'),
+         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'opensansbold';
+    src: url('opensans-semibold-webfont.eot');
+    src: url('opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-semibold-webfont.woff') format('woff'),
+         url('opensans-semibold-webfont.ttf') format('truetype'),
+         url('opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.welcome {
+	height: 100%;
+	background: url('city_scape.jpg') center center;
+	background-size: cover;
+	overflow: hidden;
+}
+	.logo {
+		margin: 200px 15px 0 15px;
+		text-align: center;
+	}
+	.welcome_message {
+		font: normal 18px opensanslight;
+		text-align: center;
+		color: #555;
+	}
+	.enter {	
+		background: #fff;
+		margin-top: 30px;
+		padding: 10px 10px 20px 10px;
+		border-radius: 5px;
+
+		-moz-box-shadow:    0 2px 7px 0 #444;
+	  -webkit-box-shadow: 0 2px 7px 0 #444;
+	  box-shadow:         0 2px 7px 0 #444;
+	}
+	.fb_sign_in {
+		font: normal 20px opensansbold;
+		padding: 20px 0;
+		background: #17B1FC;
+		color: #0D4E8F;
+		text-align: center;
+		display: block;
+		border-radius: 6px;
+
+		text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	}
+
+.header {
+	position: relative;
+	padding: 5px 0;
+	background: #fff;
+
+	-moz-box-shadow:    0 1px 2px 0 #aaa;
+	-webkit-box-shadow: 0 1px 2px 0 #aaa;
+	box-shadow:         0 1px 2px 0 #aaa;
+}
+	.user_avatar {
+		width: 40px;
+		height: 40px;
+		margin-left: 15px;
+		border-radius: 100px;
+}
+
+.map_holder {
+	background: #eee;
+	padding-bottom: 30px;
+}
+	.perfect_day_list {
+		margin: 10px 15px 0 15px;
+		padding-bottom: 20px;
+		border-bottom: 1px dashed #ccc;
+	}
+		.day_title {
+			font: normal 1em opensansbold;
+			color: #888;
+		}
+		.map_background {
+			margin-top: 10px;
+			background: #fff;
+			padding: 5px 5px 10px 5px;
+			border-radius: 3px;
+
+			-moz-box-shadow:    0 1px 4px 0 #bbb;
+	  	-webkit-box-shadow: 0 1px 4px 0 #bbb;
+	  	box-shadow:         0 1px 4px 0 #bbb;
+		}
+
+.footer_nav {
+	position: fixed;
+	bottom: 0;
+	background: #555;
+}
+
+/* Misc */
+.small_buttons {
+	font: normal 18px opensansbold;
+	color: #888;
+}
