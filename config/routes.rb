@@ -3,9 +3,11 @@ PerfectDay::Application.routes.draw do
  match 'auth/failure', to: redirect('/'), via: [:get, :post]
  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
+
  root to: "sessions#index"
  resources :users
- resources :favorites
+ resources :favorites, except: :destroy
+ delete '/destroy_favorite' => "favorites#destroy", as: 'destroy_favorite'
  get '/search' => "itineraries#search"
  get '/browse' => "itineraries#browse"
  get '/new' => "itineraries#new"

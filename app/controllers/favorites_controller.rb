@@ -6,16 +6,17 @@ class FavoritesController < ApplicationController
 
 
   def create
-    type = params[:type]
-    # if type == "favorite"
-      current_user.favorites << @itineraries
-      redirect_to :back, notice: 'You favorited #{@itineraries.name}'
+    @itinerary = Itinerary.find(params[:itinerary_id])
+
+    unless current_user.has_favorited?(@itinerary)
+      current_user.favorite_itineraries << @itinerary
+    end
+    redirect_to :back
   end
 
   def destroy
-   type == "unfavorite"
-      current_user.favorites.delete(@itineraries)
-      redirect_to :back, notice: 'Unfavorited #{@itineraries.name}'
+    Favorite.where(user_id: current_user.id, itinerary_id: params[:itinerary_id]).delete_all
+    redirect_to :back
   end
 
 

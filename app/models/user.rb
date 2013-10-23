@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def has_favorited?(itinerary)
+    !!Favorite.where(user_id: self.id, itinerary_id: itinerary.id).first
+  end
+
 end
