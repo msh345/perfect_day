@@ -6,15 +6,10 @@
   <%= link_to "favorite", favorites_path(itinerary_id: @itinerary.id), method: :post %>
   <% end %>
 <% end %>
-<a href="/upvote/itin/<%= @itinerary.id %>">
-<button type="button">Upvote Itinerary</button></a>
-<%= @itinerary.vote_count %>
 
-<br>Spot <%= params[:id] %><br>
-<a href="/upvote/spot/<%= @spot.id %>">
-<button type="button">Upvote Spot</button></a>
-<%= @spot.vote_count %>
-<br><br><br>
+<br>Spot <%= @itinerary.spots.index(@spot)+1 %><br>
+
+
 <%= @spot.name %><br>
 <%= @spot.address %><br>
 <%= @spot.phone %><br>
