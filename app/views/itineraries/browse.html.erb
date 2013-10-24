@@ -1,7 +1,7 @@
 <div class="itineraries">
 
   <% @distances.try(:each) do |distance, itinerary| %>
-    <a href="/itineraries/<%= itinerary.id %>/spots/1"><%= itinerary.name %></a><br>
+    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>"><%= itinerary.name %></a><br>
     Starting point is <%= distance.round(2) %> miles away
     <% waypoints = [] %>
 
