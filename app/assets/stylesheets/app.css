@@ -155,6 +155,6 @@ body, html { height: 100%; background: #eee; }
 	.itin_title {
 		margin: 0;
 		padding: 5px 0;
-		font: normal 1.5em opensansreg;
+		font: normal 1em opensansbold;
 		color: #333;
 	}
