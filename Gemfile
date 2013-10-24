@@ -49,6 +49,8 @@ gem 'pry'
 
 gem 'haversine'
 
+gem "font-awesome-rails", "~> 4.0.0.0"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
