@@ -102,8 +102,10 @@ body, html { height: 100%; background: #eee; }
 .footer_nav {
 	position: fixed;
 	bottom: 0;
+	padding: 10px 0 10px 0;
 	background: #555;
 	text-align: center;
+	font-size: 1.8em;
 }
 	
 /* Misc */
