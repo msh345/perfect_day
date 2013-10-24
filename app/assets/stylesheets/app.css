@@ -57,9 +57,9 @@ body, html { height: 100%; }
 		padding: 10px 10px 20px 10px;
 		border-radius: 5px;
 
-		-moz-box-shadow:    0 2px 7px 0 #444;
-	  -webkit-box-shadow: 0 2px 7px 0 #444;
-	  box-shadow:         0 2px 7px 0 #444;
+		-moz-box-shadow:    0 2px 10px 0 #222;
+	  -webkit-box-shadow: 0 2px 10px 0 #222;
+	  box-shadow:         0 2px 10px 0 #222;
 	}
 	.fb_sign_in {
 		font: normal 20px opensansbold;
@@ -100,9 +100,11 @@ body, html { height: 100%; }
 	}
 		.day_title {
 			font: normal 1em opensansbold;
-			color: #888;
+			color: #F7314C;
+			text-shadow: 0 1px 1px #fff;
 		}
 		.map_background {
+			position: relative;
 			margin-top: 10px;
 			background: #fff;
 			padding: 5px 5px 10px 5px;
@@ -112,6 +114,22 @@ body, html { height: 100%; }
 	  	-webkit-box-shadow: 0 1px 4px 0 #bbb;
 	  	box-shadow:         0 1px 4px 0 #bbb;
 		}
+			span.itinerary_score {
+				position: absolute;
+				right: 0;
+				top: -33px;
+				padding: 2px 20px;
+				display: block;
+				background: #ccc;
+				border-radius: 5px;
+				z-index: 1;
+				font: normal 15px opensansbold;
+				color: #fff;
+
+				-moz-box-shadow:    0 1px 0 0 #fff;
+	  		-webkit-box-shadow: 0 1px 0 0 #fff;
+	  		box-shadow:         0 1px 0 0 #fff;
+			}
 
 .footer_nav {
 	position: fixed;
@@ -124,3 +142,16 @@ body, html { height: 100%; }
 	font: normal 18px opensansbold;
 	color: #888;
 }
+
+/* Spot View */
+.itin_header {
+	background: #ddd;
+	padding: 0 15px 0 15px;
+	overflow: hidden;
+	z-index: -1;
+}
+	.itin_title {
+		font: normal 2em opensanslight;
+		text-align: center;
+		color: #333;
+	}
