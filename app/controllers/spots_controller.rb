@@ -3,18 +3,25 @@ class SpotsController < ApplicationController
   end
 
   def show
-    # @spot = Spot.find(params[:id])
     @itinerary = Itinerary.find(params[:itinerary_id])
     @itin_spot = ItinerarySpot.find(params[:id])
     @spot = Spot.find(@itin_spot.spot_id)
 
-    # other_itineraries = Itinerary.where(id: @itin_spot.itinerary_id)
+    @itineraries_with_current_spot = @spot.itineraries
 
     @next_spots = []
-    # other_itineraries.each do |itin|
-    #   @next_spots << Spot.find(ItinerarySpot.find(itin.itinerary_spots.find_by_spot_id(@spot.id).id+1).spot_id)
-    # end
 
+    @itineraries_with_current_spot.each do |itinerary|
+      itinerary_spots = itinerary.itinerary_spots
+      current_itin_spot_index = itinerary_spots.index {|it_spot| it_spot.spot_id == @spot.id}
+      next_itin_spot_index = current_itin_spot_index + 1
+      last_index_number = itinerary.itinerary_spots.count
+      unless next_itin_spot_index >= last_index_number
+        next_itin_spot = itinerary_spots[next_itin_spot_index]
+        next_spot = Spot.find(next_itin_spot.spot_id)
+        @next_spots << next_spot
+      end
+    end
   end
 
   def create
