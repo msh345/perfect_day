@@ -47,6 +47,8 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'binding_of_caller'
 gem 'pry'
 
+gem 'haversine'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
