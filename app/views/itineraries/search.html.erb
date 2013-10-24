@@ -13,7 +13,7 @@
     <% if @spot %>
       <% @distances.each do |distance, spot| %>
         <%= distance.round(2) %> Miles Away<br>
-        <%= spot.name %><br>
+        <a href="spots/<%= spot.id %> "><%= spot.name %></a><br>
         <%= spot.address %><br>
         <%= spot.phone %><br>
 
