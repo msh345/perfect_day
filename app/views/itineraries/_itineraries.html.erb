@@ -1,7 +1,7 @@
 <div class="itineraries">
 
   <% itineraries.each do |itinerary| %>
-    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.spots.first.id %>"><%= itinerary.name %></a>
+    <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>"><%= itinerary.name %></a>
 
     <% waypoints = [] %>
 
