@@ -5,6 +5,11 @@ function generateMap(itinerary, element) {
   var mapOptions = {
     zoom: 6,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
+    draggable: false,
+    zoomControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true
   }
 
   map = new google.maps.Map(element, mapOptions);
