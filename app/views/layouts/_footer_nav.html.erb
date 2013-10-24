@@ -1,20 +1,20 @@
 <% if current_user %>
   
   <div class='row footer_nav'>
-    <div class="small-12">
-      <div class="small-2 columns">
+    <div class="five columns">
+      <div class="small-1">
         <%= link_to "H", user_path(current_user)%>
       </div>
 
-      <div class="small-2 columns">
+      <div class="small-1" style="background: #888;">
         <%= link_to "B", browse_path %>
       </div>
 
-      <div class="small-4 columns">
+      <div class="small-2 columns" style="background: #ddd;">
         <%= link_to "N", new_path %>
       </div>
 
-      <div class="small-2 columns">
+      <div class="small-2 columns" style="background: #aaa;">
         <%= link_to "F", favorites_path %>
       </div>
 
