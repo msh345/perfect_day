@@ -9,7 +9,12 @@ function mapSearchResults() {
     var mapOptions = {
       zoom: 15,
       center: myLatlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      draggable: false,
+      zoomControl: false,
+      scaleControl: false,
+      scrollwheel: false,
+      disableDoubleClickZoom: true
     }
 
     map = new google.maps.Map(element, mapOptions);
