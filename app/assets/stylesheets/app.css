@@ -1,41 +1,5 @@
 body, html { height: 100%; background: #eee; }
 
-@font-face {
-    font-family: 'opensanslight';
-    src: url('opensans-light-webfont.eot');
-    src: url('opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-light-webfont.woff') format('woff'),
-         url('opensans-light-webfont.ttf') format('truetype'),
-         url('opensans-light-webfont.svg#open_sanslight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'opensansreg';
-    src: url('opensans-regular-webfont.eot');
-    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-regular-webfont.woff') format('woff'),
-         url('opensans-regular-webfont.ttf') format('truetype'),
-         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'opensansbold';
-    src: url('opensans-semibold-webfont.eot');
-    src: url('opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-semibold-webfont.woff') format('woff'),
-         url('opensans-semibold-webfont.ttf') format('truetype'),
-         url('opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 .welcome {
 	height: 100%;
 	background: url('city_scape.jpg') center center;
@@ -47,7 +11,8 @@ body, html { height: 100%; background: #eee; }
 		text-align: center;
 	}
 	.welcome_message {
-		font: normal 18px opensanslight;
+		font: normal 18px 'Open Sans';
+		font-weight: 200;
 		text-align: center;
 		color: #555;
 	}
@@ -62,7 +27,8 @@ body, html { height: 100%; background: #eee; }
 	  box-shadow:         0 2px 10px 0 #222;
 	}
 	.fb_sign_in {
-		font: normal 20px opensansbold;
+		font: normal 20px 'Open Sans';
+		font-weight: 700;
 		padding: 20px 0;
 		background: #17B1FC;
 		color: #0D4E8F;
@@ -99,7 +65,8 @@ body, html { height: 100%; background: #eee; }
 		border-bottom: 1px dashed #ccc;
 	}
 		.day_title {
-			font: normal 1em opensansbold;
+			font: normal 1em 'Open Sans';
+			font-weight: 700;
 			color: #F7314C;
 			text-shadow: 0 1px 1px #fff;
 		}
@@ -123,7 +90,8 @@ body, html { height: 100%; background: #eee; }
 				background: #ccc;
 				border-radius: 5px;
 				z-index: 1;
-				font: normal 15px opensansbold;
+				font: normal 15px 'Open Sans';
+				font-weight: 700;
 				color: #fff;
 
 				-moz-box-shadow:    0 1px 0 0 #fff;
@@ -139,7 +107,8 @@ body, html { height: 100%; background: #eee; }
 
 /* Misc */
 .small_buttons {
-	font: normal 18px opensansbold;
+	font: normal 18px 'Open Sans';
+	font-weight: 700;
 	color: #888;
 }
 
@@ -155,6 +124,7 @@ body, html { height: 100%; background: #eee; }
 	.itin_title {
 		margin: 0;
 		padding: 5px 0;
-		font: normal 1em opensansbold;
+		font: normal 1em 'Open Sans';
+		font-weight: 700;
 		color: #333;
 	}
