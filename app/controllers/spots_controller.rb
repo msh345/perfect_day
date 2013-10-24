@@ -6,6 +6,23 @@ class SpotsController < ApplicationController
     @itinerary = Itinerary.find(params[:itinerary_id])
     @itin_spot = ItinerarySpot.find(params[:id])
     @spot = Spot.find(@itin_spot.spot_id)
+  end
+
+  def create
+  end
+
+  # def upvote
+  #   spot = Spot.find(params[:id])
+  #   spot.upvote!
+  #   redirect_to(:back)
+  # end
+
+  def spot_types
+    render json: SpotType.pluck(:name)
+  end
+
+  def single_spot
+    @spot = Spot.find(params[:id])
 
     @itineraries_with_current_spot = @spot.itineraries
 
@@ -22,19 +39,6 @@ class SpotsController < ApplicationController
         @next_spots << next_spot
       end
     end
-  end
-
-  def create
-  end
-
-  def upvote
-    spot = Spot.find(params[:id])
-    spot.upvote!
-    redirect_to(:back)
-  end
-
-  def spot_types
-    render json: SpotType.pluck(:name)
   end
 
 end
