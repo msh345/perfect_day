@@ -50,7 +50,6 @@ class ItinerariesController < ApplicationController
       end
       @distances = @distances.sort_by {|k,v| k}
       @distances = Hash[*@distances.flatten]
-      puts @distances
     end
   end
 
