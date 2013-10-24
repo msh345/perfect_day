@@ -1,25 +1,25 @@
 <% if current_user %>
-    
+
   <div class='row footer_nav'>
     <div class="small-12">
-      <div class="small-2 columns">
-        <%= link_to "H", user_path(current_user)%>
+      <div class="small-2 columns" style="width: 20%;">
+        <%= link_to '', user_path(current_user), class: "fa  fa-home" %>
       </div>
 
       <div class="small-2 columns" style="width: 20%;">
-        <%= link_to "B", browse_path %>
+        <%= link_to '', browse_path, class: "fa fa-compass" %>
       </div>
 
       <div class="small-2 columns" style="width: 20%;">
-        <%= link_to "N", new_path %>
+        <%= link_to '', new_path, class: "fa fa-map-marker" %>
       </div>
 
       <div class="small-2 columns" style="width: 20%;">
-        <%= link_to "F", favorites_path %>
+        <%= link_to '', favorites_path, class: "fa fa-heart" %>
       </div>
 
       <div class="small-2 columns" style="width: 20%;">
-        <%= link_to "S", search_path %>
+        <%= link_to '', search_path, class: "fa fa-search" %>
       </div>
     </div>
   </div>
