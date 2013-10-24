@@ -11,4 +11,7 @@ class Spot < ActiveRecord::Base
   def coords
     [self.latitude.to_f, self.longitude.to_f]
   end
+
+
+
 end
