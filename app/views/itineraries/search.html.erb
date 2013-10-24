@@ -1,27 +1,29 @@
-<span class="twitter-typeahead" style="position: relative; display: inline-block;">
-  <!-- Make this form a form helper -->
-  <form id="search" action="/search" method="GET">
-    <input id="spot_type_search_input" class="typeahead tt-query" type="text" placeholder="Search Categories" autocomplete="off" spellcheck="false" dir="auto" name="name">
-    <span class="tt-dropdown-menu"></span>
-    <button id=  type="submit">Search</button>
-  </form>
-  <!-- end comment -->
-</span>
+<div class="row map_holder">
+  <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+    <!-- Make this form a form helper -->
+    <form id="search" action="/search" method="GET">
+      <input id="spot_type_search_input" class="typeahead tt-query" type="text" placeholder="Search Categories" autocomplete="off" spellcheck="false" dir="auto" name="name">
+      <span class="tt-dropdown-menu"></span>
+      <button id=  type="submit">Search</button>
+    </form>
+    <!-- end comment -->
+  </span>
 
-<div id="results">
-  <% if @spot %>
-    <% @distances.each do |distance, spot| %>
-      <%= distance.round(2) %> Miles Away<br>
-      <%= spot.name %><br>
-      <%= spot.address %><br>
-      <%= spot.phone %><br>
+  <div id="results">
+    <% if @spot %>
+      <% @distances.each do |distance, spot| %>
+        <%= distance.round(2) %> Miles Away<br>
+        <%= spot.name %><br>
+        <%= spot.address %><br>
+        <%= spot.phone %><br>
 
 
-<div class="spots search-results">
-    <div class="map-canvas" data-lat='<%=spot.latitude.to_f%>' data-name='<%=spot.name%>' data-long='<%=spot.longitude.to_f%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+  <div class="spots search-results">
+      <div class="map-canvas" data-lat='<%=spot.latitude.to_f%>' data-name='<%=spot.name%>' data-long='<%=spot.longitude.to_f%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
 
-</div>
+  </div>
 
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
