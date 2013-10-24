@@ -41,6 +41,16 @@ class ItinerariesController < ApplicationController
 
   def search
     @spot = SpotType.where(name: params[:name]).includes(:spots).pop
+    @distances = {}
+    if @spot
+      @spot.spots.each do |spot|
+        distance = Haversine.distance(session[:coords][0], session[:coords][1],
+                      spot.coords[0], spot.coords[1]).to_miles
+        @distances[distance] = spot
+      end
+      @distances = @distances.sort_by {|k,v| k}
+      @distances = Hash[*@distances.flatten]
+    end
   end
 
   def show
