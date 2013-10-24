@@ -1,4 +1,9 @@
-<h5><%= @itinerary.name %></h5>
+<div class="row">
+	<div class="small-12 itin_header">
+			<h1 class="itin_title"><%= @itinerary.name %></h1>
+	</div>
+</div>
+
 <%  if current_user %>
   <% if current_user.has_favorited?(@itinerary) %>
     <%= link_to "unfavorite", destroy_favorite_path(itinerary_id: @itinerary.id), method: :delete %>
@@ -9,15 +14,16 @@
 
 <br>Spot <%= @itinerary.spots.index(@spot)+1 %><br>
 
-
 <%= @spot.name %><br>
 <%= @spot.address %><br>
 <%= @spot.phone %><br>
 
+	<div class="large-12 perfect_day_list"> 
+		<div class="spots search-results map_background">
+		  <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:100%;height:250px;margin:0 auto;display:block;"></div>
+		</div>
+	</div>
 
-<div class="spots search-results">
-  <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
-</div>
 
 <h5>Description</h5>
 <p><%= @itin_spot.description %></p>

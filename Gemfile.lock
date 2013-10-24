@@ -49,6 +49,8 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    font-awesome-rails (4.0.0.0)
+      railties (>= 3.2, < 5.0)
     hashie (2.0.5)
     haversine (0.3.0)
     hike (1.2.3)
@@ -162,6 +164,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
+  font-awesome-rails (~> 4.0.0.0)
   haversine
   jbuilder (~> 1.2)
   jquery-rails
