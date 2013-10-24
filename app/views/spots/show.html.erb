@@ -34,16 +34,6 @@
     <% end %>
   </ul>
 
-
-	<% unless @next_spots.empty? %>
-	  <h5>Most Popular Next Spot</h5>
-	  <ul>
-	  <% @next_spots.each do |next_spot| %>
-	    <li><%= next_spot.name %></li>
-	  <% end %>
-	</ul>
-	<% end %>
-
 	<% unless @itinerary.itinerary_spots.first.id == @itin_spot.id %>
 	  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @itin_spot.id - 1 %>">Previous</a>
 	<% end %>
@@ -52,4 +42,3 @@
 	<% end %>
 
 </div>
-

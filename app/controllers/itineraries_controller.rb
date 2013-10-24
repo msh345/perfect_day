@@ -57,9 +57,9 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
-  def upvote
-    itin = Itinerary.find(params[:id])
-    itin.upvote!
-    redirect_to(:back)
-  end
+  # def upvote
+  #   itin = Itinerary.find(params[:id])
+  #   itin.upvote!
+  #   redirect_to(:back)
+  # end
 end
