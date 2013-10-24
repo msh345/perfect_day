@@ -150,9 +150,11 @@ body, html { height: 100%; background: #eee; }
 	padding: 0 15px 0 15px;
 	overflow: hidden;
 	z-index: 1;
+	border-bottom: 1px solid rgba(255,255,255,1);
 }
 	.itin_title {
-		font: normal 2em opensanslight;
-		text-align: center;
+		margin: 0;
+		padding: 5px 0;
+		font: normal 1.5em opensansreg;
 		color: #333;
 	}
