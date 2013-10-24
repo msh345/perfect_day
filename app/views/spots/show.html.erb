@@ -12,11 +12,9 @@
   <% end %>
 <% end %>
 
-<br>Spot <%= params[:id] %><br>
-<a href="/upvote/spot/<%= @spot.id %>">
-<button type="button">Upvote Spot</button></a>
-<%= @spot.vote_count %>
-<br><br><br>
+<br>Spot <%= @itinerary.spots.index(@spot)+1 %><br>
+
+
 <%= @spot.name %><br>
 <%= @spot.address %><br>
 <%= @spot.phone %><br>
