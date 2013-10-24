@@ -5,7 +5,9 @@
 				<ul>
 	    		<% itinerary.spots.each do |spot| %>
 	      		<% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
-	      			<li><%= spot.name %></li>
+	    		<% end %>
+	    		<% itinerary.itinerary_spots.each do |itinerary_spot| %>
+	      			<li><%= Spot.find(itinerary_spot.spot_id).name %></li>
 	    		<% end %>
 				</ul>
 
