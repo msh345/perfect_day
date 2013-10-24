@@ -15,8 +15,8 @@ class SpotsController < ApplicationController
       itinerary_spots = itinerary.itinerary_spots
       current_itin_spot_index = itinerary_spots.index {|it_spot| it_spot.spot_id == @spot.id}
       next_itin_spot_index = current_itin_spot_index + 1
-      last_index_number = itinerary.itinerary_spots.count
-      unless next_itin_spot_index >= last_index_number
+      last_index_number = itinerary.itinerary_spots.count - 1
+      unless next_itin_spot_index > last_index_number
         next_itin_spot = itinerary_spots[next_itin_spot_index]
         next_spot = Spot.find(next_itin_spot.spot_id)
         @next_spots << next_spot
