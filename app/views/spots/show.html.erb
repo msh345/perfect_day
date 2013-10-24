@@ -5,7 +5,7 @@
 			<%  if current_user %>
 			  <% if current_user.has_favorited?(@itinerary) %>
 			    <%= link_to "unfavorite", destroy_favorite_path(itinerary_id: @itinerary.id), method: :delete %>
-			    <% else %>
+			  <% else %>
 			  <%= link_to "favorite", favorites_path(itinerary_id: @itinerary.id), method: :post %>
 			  <% end %>
 			<% end %>
@@ -28,12 +28,20 @@
 <h5>Description</h5>
 <p><%= @itin_spot.description %></p>
 
+<h5>Spots on This Itinerary</h5>
+  <ul>
+    <% @itinerary.itinerary_spots.each do |itinerary_spot| %>
+      <a href="/itineraries/<%= Itinerary.find(itinerary_spot.itinerary_id).id %>/spots/<%= itinerary_spot.id %>"><li><%= Spot.find(itinerary_spot.spot_id).name %></li></a>
+    <% end %>
+  </ul>
+
+
 <% unless @next_spots.empty? %>
-<h5>Most Popular Next Spot</h5>
-<ul>
-<% @next_spots.each do |next_spot| %>
-  <li><%= next_spot.name %></li>
-<% end %>
+  <h5>Most Popular Next Spot</h5>
+  <ul>
+  <% @next_spots.each do |next_spot| %>
+    <li><%= next_spot.name %></li>
+  <% end %>
 </ul>
 <% end %>
 

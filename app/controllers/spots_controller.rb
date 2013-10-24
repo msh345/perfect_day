@@ -10,10 +10,10 @@ class SpotsController < ApplicationController
 
     # other_itineraries = Itinerary.where(id: @itin_spot.itinerary_id)
 
-    # @next_spots = []
+    @next_spots = []
     # other_itineraries.each do |itin|
     #   @next_spots << Spot.find(ItinerarySpot.find(itin.itinerary_spots.find_by_spot_id(@spot.id).id+1).spot_id)
-    end
+    # end
 
   end
 
