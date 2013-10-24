@@ -8,6 +8,9 @@
     </div>
   </div>
 </div>
+<%= @spot.name %><br>
+<%= @spot.address %><br>
+<%= @spot.phone %><br>
 
 
 <% unless @next_spots.empty? %>
@@ -15,6 +18,7 @@
   <ul>
   <% @next_spots.each do |next_spot| %>
     <li><a href="/spots/<%= next_spot.id %>"><%= next_spot.name %></a></li>
+    <li><%= next_spot.address %></li>
   <% end %>
 </ul>
 <% end %>
