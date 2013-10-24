@@ -26,10 +26,10 @@ $(document).on("ready", function() {
 
 function kickOff() {
 
-  if($(".spots").length > 0 ) {
+  if($(".search-results").length > 0 ) {
     directionsService = new google.maps.DirectionsService();
     maps = [];
-    generateItinerary();
+    mapSearchResults();
   }
 
   if($(".itineraries").length > 0 ) {

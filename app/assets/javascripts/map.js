@@ -17,6 +17,7 @@ function generateMap(itinerary, element) {
 
 function calcRoute(waypoints, display) {
   var waypts = [];
+
   for (var i=1; i<waypoints.length-1; i++) {
     var testLatLng = {
       location: waypoints[i],
@@ -26,6 +27,7 @@ function calcRoute(waypoints, display) {
   }
 
   var start = waypoints[0];
+  console.log(waypoints[0]);
   var end = waypoints[waypoints.length-1];
 
   var request = {
