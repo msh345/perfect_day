@@ -10,14 +10,15 @@
 
 <div id="results">
   <% if @spot %>
-    <% @spot.spots.each do |s| %>
-      <p><%= s.name %></p>
-      <p><%= s.address %></p>
-      <p><%= s.phone %></p>
+    <% @distances.each do |distance, spot| %>
+      <%= distance.round(2) %> Miles Away<br>
+      <%= spot.name %><br>
+      <%= spot.address %><br>
+      <%= spot.phone %><br>
 
 
 <div class="spots search-results">
-    <div class="map-canvas" data-lat='<%=s.latitude.to_f%>' data-name='<%=@spot.name%>' data-long='<%=s.longitude.to_f%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
+    <div class="map-canvas" data-lat='<%=spot.latitude.to_f%>' data-name='<%=spot.name%>' data-long='<%=spot.longitude.to_f%>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
 
 </div>
 
