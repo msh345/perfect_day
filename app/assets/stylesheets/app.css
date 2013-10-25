@@ -101,6 +101,22 @@ body, html { height: 100%; background: #eee; }
 	  	-webkit-box-shadow: 0 1px 4px 0 #bbb;
 	  	box-shadow:         0 1px 4px 0 #bbb;
 		}
+		.next_spot_holder {
+			list-style: none; 
+			margin: 5px 0 0 0; 
+		}
+			.the_spots {
+				background: #ddd;
+				border-radius: 5px;
+				margin: 5px 0 0 0;
+				padding: 10px 0;
+				text-align: center;
+				font: normal 1em 'Open Sans';
+				font-weight: 700;
+			}
+				.the_spots a {
+					color: #888;
+				}
 			span.itinerary_score {
 				position: absolute;
 				right: 0;
