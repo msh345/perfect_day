@@ -2,9 +2,12 @@
 
   <!-- this will be on the options popout on top nav -->
   <div class="row header">
-    <div class="small-12">
+    <div class="small-6 columns small_logo">
+      Perfect Day
+    </div>
+    <div class="small-6 columns" style="text-align: right;">
       <%= image_tag current_user.profile_url, class: "user_avatar" %>
-      <%= link_to "Sign out", signout_path(current_user), method: :destroy %>
+      <%= link_to "Sign Out", signout_path(current_user), method: :destroy, class: "sign_out" %>
     </div>
   </div>
 
