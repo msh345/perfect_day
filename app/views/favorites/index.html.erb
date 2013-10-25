@@ -21,6 +21,11 @@
       <% end %>
     </ul>
   </div>
+    <ul>
+      <% itinerary.itinerary_spots.each do |itinerary_spot| %>
+       <li><%= Spot.find(itinerary_spot.spot_id).name %></li>
+      <% end %>
+    </ul>
 </div>
   <% end %>
 
