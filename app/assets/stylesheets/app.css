@@ -7,8 +7,14 @@ body, html { height: 100%; background: #eee; }
 	overflow: hidden;
 }
 	.logo {
-		margin: 200px 15px 0 15px;
+		margin: 150px 15px 0 15px;
 		text-align: center;
+		font:  normal 3em 'Pacifico';
+		opacity: 0.8;
+	}
+	.small_logo {
+		margin: -3px 0 0 -10px;
+		font: normal 1.5em 'Pacifico';
 	}
 	.welcome_message {
 		font: normal 18px 'Open Sans';
@@ -170,6 +176,17 @@ body, html { height: 100%; background: #eee; }
 		color: #F7314C;
 		text-shadow: 0 1px 1px #fff;	
 	}
+
+/* Last Minute Code */
+.sign_out {
+	font: normal 0.8em 'Open Sans';
+	font-weight: 700;
+	color: #333;
+}
+
+.favorite {
+	padding: 0 10px 0 0;
+}
 
 /* Tag Code */
 .tags{
