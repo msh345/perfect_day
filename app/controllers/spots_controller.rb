@@ -44,10 +44,9 @@ class SpotsController < ApplicationController
     @next_spots.each do |spot|
       distance = Haversine.distance(session[:coords][0], session[:coords][1],
                     spot.coords[0], spot.coords[1]).to_miles
-      @distances[distance] = spot
+      @distances[spot.name] = distance
     end
-    @distances = @distances.sort_by {|k,v| k}.first(3)
-    @distances = Hash[*@distances.flatten]
+    @distances = @distances.sort_by {|spot_name,distance| distance}.first(3)
   end
 
 end

@@ -13,8 +13,8 @@
   <% unless @distances.empty? %>
     <h5>Popular Next Spots</h5>
     <ul>
-    <% @distances.each do |distance,spot| %>
-      <li><a href="/spots/<%= spot.id %>"><%= spot.name %></a> (<%= distance.round(2) %> miles away)</li>
+      <% @distances.each do |spot_name,distance| %>
+      <li><a href="/spots/<%= Spot.find_by_name(spot_name).id %>"><%= spot_name %></a> (<%= distance.round(2) %> miles away)</li>
     <% end %>
   </ul>
   <% end %>
