@@ -2,7 +2,7 @@ body, html { height: 100%; background: #eee; }
 
 .welcome {
 	height: 100%;
-	background: url(<%=asset_url('city_scape.jpg')%>) center center;
+	background: url('city_scape.jpg') center center;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -73,6 +73,23 @@ body, html { height: 100%; background: #eee; }
 			color: #F7314C;
 			text-shadow: 0 1px 1px #fff;
 		}
+		.spot_title {
+			font: normal 1em 'Open Sans';
+			font-weight: 400;
+			color: #333;
+			text-shadow: 0 1px 1px #fff;	
+		}
+		.spot_address {
+			margin: 5px 0 0 0;
+			font: normal .8em 'Open Sans';
+			font-weight: 400;
+			color: #333;
+		}
+		.separator {
+			margin: 10px 0 0 0;
+			padding: 10px 0 0 0;
+			border-top: 1px dashed #ddd;
+		}
 		.map_background {
 			position: relative;
 			margin-top: 10px;
@@ -84,6 +101,22 @@ body, html { height: 100%; background: #eee; }
 	  	-webkit-box-shadow: 0 1px 4px 0 #bbb;
 	  	box-shadow:         0 1px 4px 0 #bbb;
 		}
+		.next_spot_holder {
+			list-style: none; 
+			margin: 5px 0 0 0; 
+		}
+			.the_spots {
+				background: #ddd;
+				border-radius: 5px;
+				margin: 5px 0 0 0;
+				padding: 10px 0;
+				text-align: center;
+				font: normal 1em 'Open Sans';
+				font-weight: 700;
+			}
+				.the_spots a {
+					color: #888;
+				}
 			span.itinerary_score {
 				position: absolute;
 				right: 0;
@@ -124,17 +157,18 @@ body, html { height: 100%; background: #eee; }
 .itin_header {
 	margin-top: 52px;
 	background: #ddd;
-	padding: 0 15px 0 15px;
+	padding: 10px 15px;
 	overflow: hidden;
 	z-index: 1;
 	border-bottom: 1px solid rgba(255,255,255,1);
 }
 	.itin_title {
 		margin: 0;
-		padding: 5px 0;
+		padding: 0;
 		font: normal 1em 'Open Sans';
 		font-weight: 700;
-		color: #333;
+		color: #F7314C;
+		text-shadow: 0 1px 1px #fff;	
 	}
 
 /* Tag Code */

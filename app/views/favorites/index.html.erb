@@ -7,11 +7,6 @@
     <% itinerary.spots.each do |spot| %>
       <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
     <% end %>
-    <ul>
-      <% itinerary.itinerary_spots.each do |itinerary_spot| %>
-        <li><%= Spot.find(itinerary_spot.spot_id).name %></li>
-      <% end %>
-    </ul>
 
   <div class="large-12 perfect_day_list">
     <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>" class="day_title"><%= itinerary.name %></a>
@@ -19,12 +14,13 @@
   <div class="map_background">
     <span class="itinerary_score"><%= itinerary.favorites.count %></span>
     <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:100%;height:250px;display:block;"></div>
-  </div>
-    <ul>
+
+    <ul class="tags">
       <% itinerary.itinerary_spots.each do |itinerary_spot| %>
-       <li><%= Spot.find(itinerary_spot.spot_id).name %></li>
+        <li><a><%= Spot.find(itinerary_spot.spot_id).name %></a></li>
       <% end %>
     </ul>
+  </div>
 </div>
   <% end %>
 

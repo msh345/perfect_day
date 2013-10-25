@@ -1,31 +1,27 @@
-
-
-
-    
-
-  
 <div class="row map_holder">
   <div class="itineraries">
 
     <% @distances.try(:each) do |distance, itinerary| %>
-      <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>"><%= itinerary.name %></a><br>
-      Starting point is <%= distance.round(2) %> miles away
-
-      <ul>
-      <% itinerary.itinerary_spots.each do |itinerary_spot| %>
-       <li><%= Spot.find(itinerary_spot.spot_id).name %></li>
-      <% end %>
-    </ul>
-
+      
       <% waypoints = [] %>
 
       <% itinerary.spots.each do |spot| %>
         <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
       <% end %>
 
+      <div class="large-12 perfect_day_list">
+        <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>" class="day_title"><%= itinerary.name %></a>
+        <div class="map_background">
+          <span class="itinerary_score" style="font-size: 0.8em; padding: 2px 10px; font-weight: 400; top: -32px;"><%= distance.round(2) %> mi.</span>
+          <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:100%;height:250px;display:block;"></div>
 
-      <div class="map-canvas" data-latlong='<%= waypoints %>' style="width:300px;height:250px;margin:0 auto;display:block;"></div>
-
+          <ul class="tags">
+            <% itinerary.itinerary_spots.each do |itinerary_spot| %>
+             <li><a><%= Spot.find(itinerary_spot.spot_id).name %></a></li>
+            <% end %>
+          </ul>
+        </div>  
+      </div>
     <% end %>
 
   </div>

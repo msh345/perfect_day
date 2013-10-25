@@ -1,44 +1,48 @@
 <div class="row">
 	<div class="small-12 itin_header">
-			<h1 class="itin_title"><%= @itinerary.name %></h1>
+			<h1 class="itin_title small-10 column"><%= @itinerary.name %></h1>
 
-			<%  if current_user %>
-			  <% if current_user.has_favorited?(@itinerary) %>
-			    <%= link_to "unfavorite", destroy_favorite_path(itinerary_id: @itinerary.id), method: :delete %>
-			  <% else %>
-			  <%= link_to "favorite", favorites_path(itinerary_id: @itinerary.id), method: :post %>
-			  <% end %>
-			<% end %>
+			<div class="favorite small-2 column">
+				<%  if current_user %>
+				  <% if current_user.has_favorited?(@itinerary) %>
+				    <%= link_to "unfavorite", destroy_favorite_path(itinerary_id: @itinerary.id), method: :delete %>
+				  <% else %>
+				  <%= link_to "favorite", favorites_path(itinerary_id: @itinerary.id), method: :post %>
+				  <% end %>
+				<% end %>
+			</div>
 	</div>
 </div>
 
-<% @spot = Spot.find(@itin_spot.spot_id) %>
+	<div class="large-12 perfect_day_list no_dash_border" style="padding-bottom: 70px;">
 
-<%= @spot.name %><br>
-<%= @spot.address %><br>
-<%= @spot.phone %><br>
-
-<div class="large-12 perfect_day_list">
+		<div class="spot_title">
+			<%= @spot.name %>
+		</div>
+		
 		<div class="spots search-results map_background">
 		  <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:100%;height:250px;margin:0 auto;display:block;"></div>
 		</div>
 
-	<h5>Description</h5>
-	<p><%= @itin_spot.description %></p>
+		<div class="small-12 spot_address" style="margin-top: 10px;"><i class="fa fa-map-marker"></i> <%= @spot.address %></div>
+		<div class="small-12 spot_address"><i class="fa fa-phone"></i> <%= @spot.phone %></div>
 
-	<h5>Spots on This Itinerary</h5>	
-  
-  <ul>
-    <% @itinerary.itinerary_spots.each do |itinerary_spot| %>
-      <a href="/itineraries/<%= Itinerary.find(itinerary_spot.itinerary_id).id %>/spots/<%= itinerary_spot.id %>"><li><%= Spot.find(itinerary_spot.spot_id).name %></li></a>
-    <% end %>
-  </ul>
+		<span class="small-12 separator"></span>
 
-	<% unless @itinerary.itinerary_spots.first.id == @itin_spot.id %>
-	  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @itin_spot.id - 1 %>">Previous</a>
-	<% end %>
-	<% unless @itinerary.itinerary_spots.last.id == @itin_spot.id %>
-	  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @itin_spot.id + 1 %>">Next</a>
-	<% end %>
+		<div class="row separator">
+			<h3 style="margin: 0;font: normal 1em 'Open Sans';font-weight: 600;">Description:</h3>
+			<p style="margin: 5px 0 0 0;font: normal 0.8em 'Open Sans';font-weight: 400;"><%= @itin_spot.description %></p>
+		</div>
 
-</div>
+		<div class="row separator ">
+			<h3 style="margin: 0;font: normal 1em 'Open Sans';font-weight: 600;">Spots on This Itinerary:</h3>	
+	  </div>
+
+	  <ul class="row next_spot_holder">
+	    <% @itinerary.itinerary_spots.each do |itinerary_spot| %>
+	      <li class="small-12 the_spots">
+	      	<a href="/itineraries/<%= Itinerary.find(itinerary_spot.itinerary_id).id %>/spots/<%= itinerary_spot.id %>"><%= Spot.find(itinerary_spot.spot_id).name %></a>
+	      </li>
+	    <% end %>
+	  </ul>
+	</div>

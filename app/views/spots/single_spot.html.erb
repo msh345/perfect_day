@@ -1,21 +1,33 @@
-<div class="row map_holder">
-  <div class="large-12 perfect_day_list">
+<div class="map_holder">
+
+  <div class="large-12 perfect_day_list no_dash_border" style="padding-bottom: 70px;">
+      
+      <div class="spot_title">
+        <%= @spot.name %>
+      </div>
+
       <div class="spots search-results map_background">
         <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:100%;height:250px;margin:0 auto;display:block;"></div>
       </div>
-    </div>
+
+      <div class="small-12 spot_address" style="margin-top: 10px;"><i class="fa fa-map-marker"></i> <%= @spot.address %></div>
+      <div class="small-12 spot_address"><i class="fa fa-phone"></i> <%= @spot.phone %></div>
+
+      <span class="small-12 separator"></span>
+
+      <div class="row separator">
+        <h3 style="margin: 0;font: normal 1em 'Open Sans';font-weight: 600;">Popular Next Spots:</h3>
+      </div>
+
+      <ul class="row next_spot_holder">
+        <% unless @distances.empty? %>
+        <% @distances.each do |spot_name,distance| %>
+          <li class="small-12 the_spots">
+            <a href="/spots/<%= Spot.find_by_name(spot_name).id %>"><%= spot_name %></a> <span style="font-size: 0.8em">(<%= distance.round(1) %> mi.)</span>
+          </li>
+        <% end %>
+        <% end %>
+      </ul>
   </div>
-  <%= @spot.name %><br>
-  <%= @spot.address %><br>
-  <%= @spot.phone %><br>
-
-
-  <% unless @distances.empty? %>
-    <h5>Popular Next Spots</h5>
-    <ul>
-      <% @distances.each do |spot_name,distance| %>
-      <li><a href="/spots/<%= Spot.find_by_name(spot_name).id %>"><%= spot_name %></a> (<%= distance.round(1) %> miles away)</li>
-    <% end %>
-  </ul>
-  <% end %>
+    
 </div>
