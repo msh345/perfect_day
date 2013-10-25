@@ -17,21 +17,27 @@
 	<div class="large-12 perfect_day_list no_dash_border">
 		<% @spot = Spot.find(@itin_spot.spot_id) %>
 
-		<%= @spot.name %><br>
-	
+		<div class="spot_title"><%= @spot.name %></div>
+		
 		<div class="spots search-results map_background">
 		  <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:100%;height:250px;margin:0 auto;display:block;"></div>
 		</div>
 
-		<%= @spot.address %><br>
-		<%= @spot.phone %><br>
+		<div class="small-12 spot_address" style="margin-top: 10px;"><i class="fa fa-map-marker"></i> <%= @spot.address %></div>
+		<div class="small-12 spot_address"><i class="fa fa-phone"></i> <%= @spot.phone %></div>
 
-		<h5>Description</h5>
-		<p><%= @itin_spot.description %></p>
+		<span class="small-12 separator"></span>
 
-		<h5>Spots on This Itinerary</h5>	
-	  
-	  <ul>
+		<div class="row separator">
+			<h3 style="margin: 0;font: normal 1em 'Open Sans';font-weight: 600;">Description:</h3>
+			<p style="margin: 5px 0 0 0;font: normal 0.8em 'Open Sans';font-weight: 400;"><%= @itin_spot.description %></p>
+		</div>
+
+		<div class="row separator ">
+			<h3 style="margin: 0;font: normal 1em 'Open Sans';font-weight: 600;">Spots on This Itinerary:</h3>	
+	  </div>
+
+	  <ul class="row" style="list-style: none; margin: 15px 0 0 0; padding: 10px;background: #fff; border-radius: 5px;">
 	    <% @itinerary.itinerary_spots.each do |itinerary_spot| %>
 	      <a href="/itineraries/<%= Itinerary.find(itinerary_spot.itinerary_id).id %>/spots/<%= itinerary_spot.id %>"><li><%= Spot.find(itinerary_spot.spot_id).name %></li></a>
 	    <% end %>
