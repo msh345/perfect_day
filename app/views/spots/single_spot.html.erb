@@ -10,12 +10,11 @@
   <%= @spot.phone %><br>
 
 
-  <% unless @next_spots.empty? %>
+  <% unless @distances.empty? %>
     <h5>Popular Next Spots</h5>
     <ul>
-    <% @next_spots.each do |next_spot| %>
-      <li><a href="/spots/<%= next_spot.id %>"><%= next_spot.name %></a></li>
-      <li><%= next_spot.address %></li>
+    <% @distances.each do |distance,spot| %>
+      <li><a href="/spots/<%= spot.id %>"><%= spot.name %></a> (<%= distance.round(2) %> miles away)</li>
     <% end %>
   </ul>
   <% end %>
