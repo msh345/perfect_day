@@ -14,7 +14,7 @@
 	</div>
 </div>
 
-	<div class="large-12 perfect_day_list no_dash_border" style="padding-bottom: 80px;">
+	<div class="large-12 perfect_day_list no_dash_border" style="padding-bottom: 70px;">
 
 		<div class="spot_title">
 			<%= @spot.name %>
@@ -45,12 +45,4 @@
 	      </li>
 	    <% end %>
 	  </ul>
-
-		<% unless @itinerary.itinerary_spots.first.id == @itin_spot.id %>
-		  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @itin_spot.id - 1 %>">Previous</a>
-		<% end %>
-		<% unless @itinerary.itinerary_spots.last.id == @itin_spot.id %>
-		  <a href="/itineraries/<%= @itinerary.id %>/spots/<%= @itin_spot.id + 1 %>">Next</a>
-		<% end %>		
-
 	</div>
