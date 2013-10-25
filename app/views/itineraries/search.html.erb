@@ -1,9 +1,12 @@
 <div class="row map_holder">
+
+ 
+  
   <span class="twitter-typeahead" style="position: relative; display: inline-block;">
     <!-- Make this form a form helper -->
     <form id="search" action="/search" method="GET">
       <input id="spot_type_search_input" class="typeahead tt-query" type="text" placeholder="Search Categories" autocomplete="off" spellcheck="false" dir="auto" name="name">
-      <span class="tt-dropdown-menu"></span>
+      <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"></span>
       <button id=  type="submit">Search</button>
     </form>
     <!-- end comment -->
@@ -27,3 +30,6 @@
     <% end %>
   </div>
 </div>
+
+
+
