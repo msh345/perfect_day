@@ -2,7 +2,7 @@ body, html { height: 100%; background: #eee; }
 
 .welcome {
 	height: 100%;
-	background: url('city_scape.jpg') center center;
+	background: url(<%=asset_url('city_scape.jpg')%>) center center;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -57,7 +57,7 @@ body, html { height: 100%; background: #eee; }
 
 .map_holder {
 	background: #eee;
-	padding: 60px 0 30px 0;
+	padding: 60px 0 49px 0;
 }
 	.perfect_day_list {
 		margin: 10px 15px 0 15px;
@@ -102,9 +102,13 @@ body, html { height: 100%; background: #eee; }
 .footer_nav {
 	position: fixed;
 	bottom: 0;
+	padding: 10px 0 10px 0;
 	background: #555;
+	text-align: center;
+	font-size: 1.8em;
+	text-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
-
+	
 /* Misc */
 .small_buttons {
 	font: normal 18px 'Open Sans';
@@ -128,3 +132,61 @@ body, html { height: 100%; background: #eee; }
 		font-weight: 700;
 		color: #333;
 	}
+
+/* Tag Code */
+.tags{
+	margin: 5px 0 0 0;
+	padding:0;
+	/*position:absolute;
+	right:24px;
+	bottom:-12px;*/
+	list-style:none;
+}
+
+.tags li, .tags a{
+	display: inline-block;
+	height:24px;
+	line-height:24px;
+	position:relative;
+	font-size:11px;
+}
+
+.tags a{
+	margin-left:0px;
+	padding:0 10px 0 10px;
+	background:#0089e0;
+	color:#fff;
+	text-decoration:none;
+	border-radius: 4px;
+	cursor: default;
+} 
+
+/*.tags a:before{
+	content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-12px;
+	width:0;
+	height:0;
+	border-color:transparent #0089e0 transparent transparent;
+	border-style:solid;
+	border-width:12px 12px 12px 0;		
+}*/
+
+/*.tags a:after{
+	content:"";
+	position:absolute;
+	top:10px;
+	left:0;
+	float:left;
+	width:4px;
+	height:4px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	background:#fff;
+	-moz-box-shadow:-1px -1px 2px #004977;
+	-webkit-box-shadow:-1px -1px 2px #004977;
+	box-shadow:-1px -1px 2px #004977;
+}*/

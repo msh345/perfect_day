@@ -1,0 +1,21 @@
+<div class="row map_holder">
+  <div class="large-12 perfect_day_list">
+      <div class="spots search-results map_background">
+        <div class="map-canvas" data-lat='<%=@spot.latitude%>' data-name='<%=@spot.name%>' data-long='<%=@spot.longitude%>' style="width:100%;height:250px;margin:0 auto;display:block;"></div>
+      </div>
+    </div>
+  </div>
+  <%= @spot.name %><br>
+  <%= @spot.address %><br>
+  <%= @spot.phone %><br>
+
+
+  <% unless @distances.empty? %>
+    <h5>Popular Next Spots</h5>
+    <ul>
+      <% @distances.each do |spot_name,distance| %>
+      <li><a href="/spots/<%= Spot.find_by_name(spot_name).id %>"><%= spot_name %></a> (<%= distance.round(1) %> miles away)</li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>

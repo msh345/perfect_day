@@ -7,6 +7,11 @@
     <% itinerary.spots.each do |spot| %>
       <% waypoints << [spot.latitude.to_f, spot.longitude.to_f] %>
     <% end %>
+    <ul>
+      <% itinerary.itinerary_spots.each do |itinerary_spot| %>
+        <li><%= Spot.find(itinerary_spot.spot_id).name %></li>
+      <% end %>
+    </ul>
 
   <div class="large-12 perfect_day_list">
     <a href="/itineraries/<%= itinerary.id %>/spots/<%= itinerary.itinerary_spots.first.id %>" class="day_title"><%= itinerary.name %></a>

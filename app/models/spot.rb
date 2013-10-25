@@ -3,10 +3,10 @@ class Spot < ActiveRecord::Base
   has_many :itineraries, through: :itinerary_spots
   has_and_belongs_to_many :spot_types
 
-  def upvote!
-    self.vote_count += 1
-    self.save
-  end
+  # def upvote!
+  #   self.vote_count += 1
+  #   self.save
+  # end
 
   def coords
     [self.latitude.to_f, self.longitude.to_f]

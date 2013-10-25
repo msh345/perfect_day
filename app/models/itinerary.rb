@@ -6,8 +6,8 @@ class Itinerary < ActiveRecord::Base
   has_many :favorites
   has_many :favorited_by, through: :favorites, source: :user
 
-  def upvote!
-    self.vote_count += 1
-    self.save
-  end
+  # def upvote!
+  #   self.vote_count += 1
+  #   self.save
+  # end
 end

@@ -40,10 +40,10 @@ class ItinerariesController < ApplicationController
   end
 
   def search
-    @spot = SpotType.where(name: params[:name]).includes(:spots).pop
+    @spot_type = SpotType.where(name: params[:name]).includes(:spots).pop
     @distances = {}
-    if @spot
-      @spot.spots.each do |spot|
+    if @spot_type
+      @spot_type.spots.each do |spot|
         distance = Haversine.distance(session[:coords][0], session[:coords][1],
                       spot.coords[0], spot.coords[1]).to_miles
         @distances[distance] = spot
@@ -57,9 +57,9 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
-  def upvote
-    itin = Itinerary.find(params[:id])
-    itin.upvote!
-    redirect_to(:back)
-  end
+  # def upvote
+  #   itin = Itinerary.find(params[:id])
+  #   itin.upvote!
+  #   redirect_to(:back)
+  # end
 end
