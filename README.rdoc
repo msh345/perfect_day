@@ -1,28 +1,12 @@
-== README
+Perfect Day
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Visit us on Heroku: perfect-day.herokuapp.com
+(Optimized for Mobile)
 
-Things you may want to cover:
+Have you ever had a perfect day that you wanted to share with the world but couldn't find
+an easy way to spread the word?
 
-* Ruby version
+Well Perfect Day makes it easy and manageable to do exactly that.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Not only can you craft a day for others to view and follow, you can browse
+all Perfect Days near you or search by keywords to find a specific spot to check out.
